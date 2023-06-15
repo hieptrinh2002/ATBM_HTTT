@@ -1,0 +1,12 @@
+D:\An toàn và bảo mật trong hệ thống thông tin\ATBM_HTTT\ATBM_HTTT\bin\Debug\ATBM_HTTT.exe.config
+D:\An toàn và bảo mật trong hệ thống thông tin\ATBM_HTTT\ATBM_HTTT\bin\Debug\ATBM_HTTT.exe
+D:\An toàn và bảo mật trong hệ thống thông tin\ATBM_HTTT\ATBM_HTTT\bin\Debug\ATBM_HTTT.pdb
+D:\An toàn và bảo mật trong hệ thống thông tin\ATBM_HTTT\ATBM_HTTT\bin\Debug\Oracle.DataAccess.dll
+D:\An toàn và bảo mật trong hệ thống thông tin\ATBM_HTTT\ATBM_HTTT\obj\Debug\ATBM_HTTT.csprojAssemblyReference.cache
+D:\An toàn và bảo mật trong hệ thống thông tin\ATBM_HTTT\ATBM_HTTT\obj\Debug\ATBM_HTTT.Properties.Resources.resources
+D:\An toàn và bảo mật trong hệ thống thông tin\ATBM_HTTT\ATBM_HTTT\obj\Debug\ATBM_HTTT.csproj.GenerateResource.cache
+D:\An toàn và bảo mật trong hệ thống thông tin\ATBM_HTTT\ATBM_HTTT\obj\Debug\ATBM_HTTT.csproj.CoreCompileInputs.cache
+D:\An toàn và bảo mật trong hệ thống thông tin\ATBM_HTTT\ATBM_HTTT\obj\Debug\ATBM_HTTT.csproj.CopyComplete
+D:\An toàn và bảo mật trong hệ thống thông tin\ATBM_HTTT\ATBM_HTTT\obj\Debug\ATBM_HTTT.exe
+D:\An toàn và bảo mật trong hệ thống thông tin\ATBM_HTTT\ATBM_HTTT\obj\Debug\ATBM_HTTT.pdb
+D:\An toàn và bảo mật trong hệ thống thông tin\ATBM_HTTT\ATBM_HTTT\obj\Debug\ATBM_HTTT.USERS_ROLES.resources
