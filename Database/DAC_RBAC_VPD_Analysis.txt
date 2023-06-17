@@ -1,0 +1,21 @@
+#1**Nhan Vien
+- view : xem thong tin ca nhan ca nhan (DAC-RBAC)
+- view : xem toan bo PHANCONG cua ca nhan (VPD_1 )
+- view : xem toan bo Phong Ban, De an ( VIEW)(DAC)
+#2**QL Truc Tiep : Nhan Vien ( ke thua)
+- xem danh sach nhan vien minh quan ly (- luong , phu cap) (VPD_2)
+- xem các dòng trong quan hệ PHANCONG liên quan đến chính Q và các nhân viên N
+được quản lý trực tiếp bởi Q. => ( VPD_1 ) 
+#3**Truong Phong: NhanVien ( ke thua )
+- xem danh sach nhan vien thuoc Phong Ban minh quan ly (- luong , phu cap) (VPD_2)
+- insert, delete, update tren PHANCONG cua nhan vien thuoc phong ban minh quan li (DAC-RBAC)
+#4**Tai Chinh: NhanVien ( ke thua )
+- select * from NHANVIEN / PHANCONG ( khỏi tạo gì / cho truy cập trực tiếp table cũng đc) (DAC)
+- update LUONG va PHUCAP ( -GiamDoc) (trigger)
+#5**Nhan Su: NhanVien ( ke thua )
+- insert update trên PHONGBAN. (
+- Thêm, cập nhật dữ liệu trong quan hệ NHANVIEN với giá trị các trường LUONG, PHUCAP 
+  là mang giá trị mặc định là NULL (Proc) (DAC)
+-- không được xem LUONG, PHUCAP của người khác ( VPD_3 (hiển thị lương + phụ cấp = NULL))
+#6** Truong De AN : NhanVien ( ke thua )
+- insert,delete,update trên DEAN (VIEW) (DAC)
