@@ -1,21 +1,3 @@
--- tạo ADMIN
-ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
-
---Tao user dba QLTGDA (SYS)
-CREATE USER QLTGDA IDENTIFIED BY admin;
-GRANT ALL PRIVILEGES TO QLTGDA;
-GRANT DBA TO QLTGDA;
-
---Cap quyen vao bang DBMS_CRYPTO de cai dat ma hoa
-GRANT EXECUTE ON SYS.DBMS_CRYPTO TO QLTGDA;
-
-
---Cap quyen doc audit_trail
-GRANT SELECT ON DBA_AUDIT_TRAIL TO QLTGDA;
-
-
-
-
 
 ----- Tao moi user
 create or replace procedure proc_CREATE_NewUser(User_name in varchar2,Pass_Word in varchar2)
