@@ -108,47 +108,43 @@ begin
     end if;
 end;
 
--- TẠO USERS
-CREATE OR REPLACE PROCEDURE CREATE_ALL_USERS
-AS
-    CURSOR CURS AS (SELECT MANV , VAITRO FROM NHANVIEN WHERE MANV NOT IN (SELECT USERNAME FROM ALL_USERS));
-    _USERNAME NHANVIEN.MANV%TYPE;
-    _ROLE NHANVIEN.VAITRO%TYPE;
+
+/-- TẠO LIST USER
+DECLARE
+    CURSOR CURS IS (SELECT MANV,VAITRO FROM NHANVIEN WHERE MANV NOT IN (SELECT USERNAME FROM ALL_USERS));
+    USERNAME NHANVIEN.MANV%TYPE;
+    ROLE_VT NHANVIEN.VAITRO%TYPE;
+    strSQL VARCHAR2(3000);
 BEGIN 
-    CURS.OPEN();
+    OPEN CURS;
+    strSQL := 'ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE';
+    EXECUTE IMMEDIATE (strSQL);
       LOOP 
-        FETCH CURS INTO _USERNAME,_ROLE;
+        FETCH CURS INTO USERNAME,ROLE_VT;
         EXIT WHEN CURS%NOTFOUND;
-        execute immediate('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
-        execute immediate('CREATE USER '|| _USERNAME||' IDENTIFIED by '||_USERNAME);
-        execute immediate('GRANT CREATE SESSION TO '||_USERNAME);
-        execute immediate('GRANT CONNECT TO '||_USERNAME);
-        execute immediate('ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE');
+        execute immediate('CREATE USER '||USERNAME||' IDENTIFIED BY '||USERNAME);
+        execute immediate('GRANT CREATE SESSION TO '||USERNAME);
+        execute immediate('GRANT CONNECT TO '||USERNAME);
+        IF (ROLE_VT = N'Nhân viên') THEN  
+          execute immediate('GRANT NHANVIEN TO '||USERNAME);
 
-        IF (_ROLE = N'Nhân viên') THEN  
-          execute immediate('GRANT NHANVIEN TO '||_USERNAME);
+        ELSIF (ROLE_VT = N'QL trực tiếp') THEN 
+          execute immediate('GRANT QLTRUCTIEP TO '||USERNAME);
 
-        ELSIF (_ROLE = N'QL trực Tiếp') THEN 
-          execute immediate('GRANT QLTRUCTIEP TO '||_USERNAME);
-
-        ELSIF (_ROLE = N'Trưởng thòng') THEN 
-          execute immediate('GRANT TRUONGPHONG TO '||_USERNAME);
+        ELSIF (ROLE_VT = N'Trưởng phòng') THEN 
+          execute immediate('GRANT TRUONGPHONG TO '||USERNAME);
           
-        ELSIF (_ROLE = N'Tài chính') THEN 
-          execute immediate('GRANT TAICHINH TO '||_USERNAME);
+        ELSIF (ROLE_VT = N'Tài chính') THEN 
+          execute immediate('GRANT TAICHINH TO '||USERNAME);
 
-        ELSIF (_ROLE = N'Nhân sự') THEN 
-          execute immediate('GRANT NHANSU TO '||_USERNAME);
-s
-        ELSIF (_ROLE = N'Trưởng đề án') THEN 
-          execute immediate('GRANT TRUONGDA TO '||_USERNAME);
+        ELSIF (ROLE_VT = N'Nhân sự') THEN 
+          execute immediate('GRANT NHANSU TO '||USERNAME);
+
+        ELSIF (ROLE_VT = N'Trưởng đề án') THEN 
+          execute immediate('GRANT TRUONGDA TO '||USERNAME);
         END IF;
       END LOOP;
-    CURS.CLOSE(); 
-
-    EXCEPTION
-       WHEN OTHERS THEN
-        RAISE_APPLICATION_ERROR(-20001,'ERORR WHEN CREATE LIST USER !!!');
-
+    execute immediate('ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE');
+    CLOSE CURS; 
+     
 END;
-
