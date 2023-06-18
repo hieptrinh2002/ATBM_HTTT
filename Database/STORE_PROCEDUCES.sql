@@ -108,3 +108,47 @@ begin
     end if;
 end;
 
+-- TẠO USERS
+CREATE OR REPLACE PROCEDURE CREATE_ALL_USERS
+AS
+    CURSOR CURS AS (SELECT MANV , VAITRO FROM NHANVIEN WHERE MANV NOT IN (SELECT USERNAME FROM ALL_USERS));
+    _USERNAME NHANVIEN.MANV%TYPE;
+    _ROLE NHANVIEN.VAITRO%TYPE;
+BEGIN 
+    CURS.OPEN();
+      LOOP 
+        FETCH CURS INTO _USERNAME,_ROLE;
+        EXIT WHEN CURS%NOTFOUND;
+        execute immediate('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+        execute immediate('CREATE USER '|| _USERNAME||' IDENTIFIED by '||_USERNAME);
+        execute immediate('GRANT CREATE SESSION TO '||_USERNAME);
+        execute immediate('GRANT CONNECT TO '||_USERNAME);
+        execute immediate('ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE');
+
+        IF (_ROLE = N'Nhân viên') THEN  
+          execute immediate('GRANT NHANVIEN TO '||_USERNAME);
+
+        ELSIF (_ROLE = N'QL trực Tiếp') THEN 
+          execute immediate('GRANT QLTRUCTIEP TO '||_USERNAME);
+
+        ELSIF (_ROLE = N'Trưởng thòng') THEN 
+          execute immediate('GRANT TRUONGPHONG TO '||_USERNAME);
+          
+        ELSIF (_ROLE = N'Tài chính') THEN 
+          execute immediate('GRANT TAICHINH TO '||_USERNAME);
+
+        ELSIF (_ROLE = N'Nhân sự') THEN 
+          execute immediate('GRANT NHANSU TO '||_USERNAME);
+s
+        ELSIF (_ROLE = N'Trưởng đề án') THEN 
+          execute immediate('GRANT TRUONGDA TO '||_USERNAME);
+        END IF;
+      END LOOP;
+    CURS.CLOSE(); 
+
+    EXCEPTION
+       WHEN OTHERS THEN
+        RAISE_APPLICATION_ERROR(-20001,'ERORR WHEN CREATE LIST USER !!!');
+
+END;
+
