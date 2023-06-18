@@ -23,7 +23,7 @@ namespace ATBM_HTTT
         }
         private void USERS_ROLES_Load(object sender, EventArgs e)
         {
-
+           
         }
         private void dataGridView_listUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

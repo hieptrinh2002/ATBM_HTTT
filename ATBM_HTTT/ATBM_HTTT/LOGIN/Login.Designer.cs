@@ -34,7 +34,6 @@ namespace ATBM_HTTT
             this.textBox_username = new System.Windows.Forms.TextBox();
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.button_login = new System.Windows.Forms.Button();
-            this.checkBox_isAdmin = new System.Windows.Forms.CheckBox();
             this.txtWarning = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -78,24 +77,13 @@ namespace ATBM_HTTT
             // button_login
             // 
             this.button_login.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_login.Location = new System.Drawing.Point(206, 232);
+            this.button_login.Location = new System.Drawing.Point(201, 232);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(109, 40);
             this.button_login.TabIndex = 4;
             this.button_login.Text = "LOGIN";
             this.button_login.UseVisualStyleBackColor = true;
             this.button_login.Click += new System.EventHandler(this.button_login_Click);
-            // 
-            // checkBox_isAdmin
-            // 
-            this.checkBox_isAdmin.AutoSize = true;
-            this.checkBox_isAdmin.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_isAdmin.Location = new System.Drawing.Point(349, 169);
-            this.checkBox_isAdmin.Name = "checkBox_isAdmin";
-            this.checkBox_isAdmin.Size = new System.Drawing.Size(122, 27);
-            this.checkBox_isAdmin.TabIndex = 5;
-            this.checkBox_isAdmin.Text = "DBADMIN";
-            this.checkBox_isAdmin.UseVisualStyleBackColor = true;
             // 
             // txtWarning
             // 
@@ -123,7 +111,6 @@ namespace ATBM_HTTT
             this.ClientSize = new System.Drawing.Size(507, 284);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtWarning);
-            this.Controls.Add(this.checkBox_isAdmin);
             this.Controls.Add(this.button_login);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.textBox_username);
@@ -145,7 +132,6 @@ namespace ATBM_HTTT
         private System.Windows.Forms.TextBox textBox_username;
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.Button button_login;
-        private System.Windows.Forms.CheckBox checkBox_isAdmin;
         private System.Windows.Forms.Label txtWarning;
         private System.Windows.Forms.Label label3;
     }

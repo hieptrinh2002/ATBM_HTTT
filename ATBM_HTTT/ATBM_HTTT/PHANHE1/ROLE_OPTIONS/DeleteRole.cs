@@ -93,7 +93,7 @@ namespace ATBM_HTTT
                 var Role_name = new OracleParameter("@Role_name", "");//"" khowir tao cho parameter @Role_name
                 command.Parameters.Add(Role_name);
                 Role_name.Value = RoleName;
-                //command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
 
 
                 status = true;
