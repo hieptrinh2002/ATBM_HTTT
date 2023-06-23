@@ -85,14 +85,25 @@ GRANT SELECT ON PHANCONG TO NHANVIEN; --(CAN CAI DAT VPD_1)
 
 --VPD 1: Nhân viên có quyền xem tất cả các thuộc tính trên quan hệ PHANCONG liên quan đến chính nhân viên đó.
 
-
-CREATE OR REPLACE FUNCTION NHANVIEN_XEM_THONGTIN_PHANCONG
+CREATE OR REPLACE FUNCTION THONGTIN_PHANCONG
     (schema_name IN VARCHAR2, table_name IN VARCHAR2)
     RETURN VARCHAR2
 IS
     predicate VARCHAR2(4000);
 BEGIN
-    predicate := 'MANV = SYS_CONTEXT(''USERENV'', ''SESSION_USER'')';
+    predicate :=
+        'EXISTS (
+            SELECT 1
+            FROM NHANVIEN, PHANCONG
+            WHERE
+                (
+                    VAITRO = ''Nhân viên'' AND MANV = SYS_CONTEXT(''USERENV'',''SESSION_USER'')
+                )
+                OR
+                (
+                    VAITRO = ''QL trực tiếp'' OR (MANQL = (SELECT MANV FROM NHANVIEN WHERE MANV = SYS_CONTEXT(''USERENV'',''SESSION_USER'')) AND (MANV = :MANV OR EXISTS (SELECT 1 FROM PHANCONG WHERE MANV = :MANV )))
+                )
+        )';
 
     RETURN predicate;
 END;
@@ -102,30 +113,16 @@ END;
 BEGIN
     DBMS_RLS.ADD_POLICY(
         object_schema   => 'QLTGDA',
-        object_name     => 'NHANVIEN',
-        policy_name     => 'VPD_NHANVIEN_XEM_THONGTIN_PHANCONG',
+        object_name     => 'PHANCONG',
+        policy_name     => 'VPD_THONGTIN_PHANCONG_POLICY',
         function_schema => 'QLTGDA',
-        policy_function => 'NHANVIEN_XEM_THONGTIN_PHANCONG',
+        policy_function => 'THONGTIN_PHANCONG',
         statement_types => 'SELECT',
-        update_check    => FALSE,
         enable          => TRUE
     );
 END;
 /
 
-BEGIN
-    DBMS_RLS.ADD_POLICY(
-        object_schema   => 'QLTGDA',
-        object_name     => 'PHANCONG',
-        policy_name     => 'VPD_NHANVIEN_XEM_THONGTIN_PHANCONG',
-        function_schema => 'QLTGDA',
-        policy_function => 'NHANVIEN_XEM_THONGTIN_PHANCONG',
-        statement_types => 'SELECT',
-        update_check    => FALSE,
-        enable          => TRUE
-    );
-END;
-/
 
 
 
@@ -136,60 +133,49 @@ GRANT NHANVIEN TO TRUONGPHONG;
 GRANT SELECT ON NHANVIEN TO QLTRUCTIEP; --(CAN CAI DAT VPD_2)
 
 --VPD_ 2: QL TRUC TIEP CO THE XEM CAC THUOC TINH CUA NHAN VIEN MA MINH QUAN LY (NGOAI TRU LUONG VA PHUCAP)
-CREATE OR REPLACE FUNCTION QLTRUCTIEP_VPD_POLICY
+CREATE OR REPLACE FUNCTION DSNHANVIEN_VPD_POLICY
     (schema_name IN VARCHAR2, table_name IN VARCHAR2)
     RETURN VARCHAR2
 IS
     predicate VARCHAR2(4000);
 BEGIN
-    predicate := 'VAITRO = ''QL trực tiếp'' OR (MANQL = (SELECT MANV FROM NHANVIEN WHERE MANV = SYS_CONTEXT(''USERENV'',''SESSION_USER'')) AND COLUMN_NAME NOT IN (''LUONG'', ''PHUCAP''))';
+    predicate :=
+        'EXISTS (
+            SELECT 1
+            FROM NHANVIEN, PHONGBAN
+            WHERE
+			(
+                VAITRO = ''Trưởng phòng'' AND MANV = SYS_CONTEXT(''USERENV'',''SESSION_USER'') AND NHANVIEN.PHG = PHONGBAN.MAPB AND NHANVIEN.MANV = PHONGBAN.TRPHG
+			)
+			OR
+			(
+				VAITRO = ''QL trực tiếp'' OR (MANQL = (SELECT MANV FROM NHANVIEN WHERE MANV = SYS_CONTEXT(''USERENV'',''SESSION_USER''))
+			)
+        )';
 
-    RETURN predicate;
+    RETURN 'NOT (column_name = ''LUONG'' OR column_name = ''PHUCAP'') OR (' || predicate || ')';
 END;
 /
+
+
 
 
 BEGIN
     DBMS_RLS.ADD_POLICY(
         object_schema   => 'QLTGDA',
         object_name     => 'NHANVIEN',
-        policy_name     => 'VPD_QLTRUCTIEP_POLICY',
+        policy_name     => 'VPD_DSNHANVIEN_POLICY',
         function_schema => 'QLTGDA',
-        policy_function => 'QLTRUCTIEP_VPD_POLICY',
+        policy_function => 'DSNHANVIEN_VPD_POLICY',
         statement_types => 'SELECT',
         update_check    => FALSE,
         enable          => TRUE
     );
 END;
-/
 
 -- QUAN LY TRUC TIEP có thể xem các dòng trong quan hệ PHANCONG liên quan đến chính họ và các nhân viên được họ quản lý trực tiếp
  --GRANT SELECT ON PHANCONG TO QLTRUCTIEP;(đã kế thừa từ NHANVIEN) --(CAN CAI DAT VPD_1)
- CREATE OR REPLACE FUNCTION QLTRUCTIEP_PHANCONG
-    (schema_name IN VARCHAR2, table_name IN VARCHAR2)
-    RETURN VARCHAR2
-IS
-    predicate VARCHAR2(4000);
-BEGIN
-    predicate := 'VAITRO = ''QL trực tiếp'' OR (MANQL = (SELECT MANV FROM NHANVIEN WHERE MANV = SYS_CONTEXT(''USERENV'',''SESSION_USER'')) AND (MANV = :MANV OR EXISTS (SELECT 1 FROM PHANCONG WHERE MANV = :MANV AND MADA = NHANVIEN.MANV)))';
-
-    RETURN predicate;
-END;
-/
-
-
-BEGIN
-    DBMS_RLS.ADD_POLICY(
-        object_schema   => 'QLTGDA',
-        object_name     => 'PHANCONG',
-        policy_name     => 'VPD_QLTRUCTIEP_PHANCONG',
-        function_schema => 'QLTGDA',
-        policy_function => 'QLTRUCTIEP_PHANCONG',
-        statement_types => 'SELECT',
-        update_check    => FALSE,
-        enable          => TRUE
-    );
-END;
+ -- DUNG VPD VPD_THONGTIN_PHANCONG_POLICY DA CAI DAT O TREN
 /
 
 
@@ -211,32 +197,49 @@ GRANT SELECT, UPDATE, DELETE ON VIEW_TRUONGPHONG_THONGTIN_PHANCONG TO TRUONGPHON
 GRANT SELECT ON NHANVIEN TO TRUONGPHONG; --(CAN CAI DAT VPD_2)
 /
 -- TRUONG PHONG CO THE XEM CAC THUOC TINH CUA NHAN VIEN PHONG MINH (NGOAI TRU LUONG VA PHUCAP)
-
-CREATE OR REPLACE FUNCTION TRUONGPHONG_VPD_POLICY
+ -- DUNG VPD_DSNHANVIEN_POLICY DA CAI DAT O TREN
+/*
+CREATE OR REPLACE FUNCTION DSNHANVIEN_VPD_POLICY
     (schema_name IN VARCHAR2, table_name IN VARCHAR2)
     RETURN VARCHAR2
 IS
     predicate VARCHAR2(4000);
 BEGIN
-    predicate := 'VAITRO = ''Trưởng phòng'' OR (MANQL = (SELECT MANV FROM NHANVIEN WHERE MANV = SYS_CONTEXT(''USERENV'',''SESSION_USER'')) AND COLUMN_NAME NOT IN (''LUONG'', ''PHUCAP''))';
+    predicate :=
+        'EXISTS (
+            SELECT 1
+            FROM NHANVIEN, PHONGBAN
+            WHERE
+			(
+                VAITRO = ''Trưởng phòng'' AND MANV = SYS_CONTEXT(''USERENV'',''SESSION_USER'') AND NHANVIEN.PHG = PHONGBAN.MAPB AND NHANVIEN.MANV = PHONGBAN.TRPHG
+			)
+			OR
+			(
+				VAITRO = ''QL trực tiếp'' OR (MANQL = (SELECT MANV FROM NHANVIEN WHERE MANV = SYS_CONTEXT(''USERENV'',''SESSION_USER''))
+			)
+        )';
 
-    RETURN predicate;
+    RETURN 'NOT (column_name = ''LUONG'' OR column_name = ''PHUCAP'') OR (' || predicate || ')';
 END;
 /
+
+
 
 
 BEGIN
     DBMS_RLS.ADD_POLICY(
         object_schema   => 'QLTGDA',
         object_name     => 'NHANVIEN',
-        policy_name     => 'VPD_TRUONGPHONG_POLICY',
+        policy_name     => 'VPD_DSNHANVIEN_POLICY',
         function_schema => 'QLTGDA',
-        policy_function => 'TRUONGPHONG_VPD_POLICY',
+        policy_function => 'DSNHANVIEN_VPD_POLICY',
         statement_types => 'SELECT',
         update_check    => FALSE,
         enable          => TRUE
     );
 END;
+*/
+
 /
 --CS#4: TAI CHINH
 GRANT NHANVIEN TO TAICHINH; 
@@ -253,19 +256,19 @@ GRANT UPDATE (MANV,TENNV,PHAI,NGAYSINH,DIACHI,SODT,VAITRO,MANQL,PHG) ON NHANVIEN
     -- cài đặt proc để insert, update The Nhan vien với lương và phụ cấp có gt là NULL 
 -- CAI VPD: Nhan Su không được xem LUONG, PHUCAP của người khác và không được cập nhật trên các trường LUONG, PHUCAP.
 
+
 CREATE OR REPLACE FUNCTION NHANSU_VPD_POLICY
     (schema_name IN VARCHAR2, table_name IN VARCHAR2)
     RETURN VARCHAR2
 IS
     predicate VARCHAR2(4000);
 BEGIN
-    predicate := 'VAITRO <> ''Nhân sự'' OR (VAITRO = ''Nhân sự'' AND SYS_CONTEXT(''USERENV'',''SESSION_USER'') = MANV)';
+     predicate := 'VAITRO <> ''Nhân sự'' OR (VAITRO = ''Nhân sự'' AND SYS_CONTEXT(''USERENV'',''SESSION_USER'') = MANV)';
 
-    IF table_name = 'NHANVIEN' THEN
-        predicate := predicate || ' AND (COLUMN_NAME <> ''LUONG'' AND COLUMN_NAME <> ''PHUCAP'')';
-    END IF;
-
-    RETURN predicate;
+    RETURN 'CASE
+                WHEN column_name IN (''LUONG'', ''PHUCAP'') THEN NULL
+                ELSE ' || predicate || '
+            END';
 END;
 /
 
