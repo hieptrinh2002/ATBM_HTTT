@@ -38,7 +38,7 @@ ALTER SESSION SET CONTAINER = PDB_QLTGDA;
 BEGIN
     SA_SYSDBA.DROP_POLICY (
         policy_name => 'XEM_THONG_BAO',
-        drop_column => true  -- Xóa t?t c? các c?t có liên quan ??n chính sách
+        drop_column => true  -- Xóa tất cả các cột có liên quan đến chính sách
     );
 END;
 /
@@ -61,6 +61,7 @@ GRANT EXECUTE ON SA_SYSDBA TO DBA_QLTGDA;
 /*===================================================================================================================*/
 CONN DBA_QLTGDA/123@//LOCALHOST:1521/PDB_QLTGDA;
 GRANT INHERIT PRIVILEGES ON USER DBA_QLTGDA TO LBACSYS;
+
 -- Tạo bảng THONGBAO
 --DROP TABLE THONGBAO
 CREATE TABLE THONGBAO (
@@ -73,12 +74,15 @@ CREATE TABLE THONGBAO (
     PRIMARY KEY (MATB)
 );
 /
-
 INSERT INTO THONGBAO (MATB, NOIDUNG, CAPBAC, LINHVUC, CHINHANH, NGAYTB) VALUES ('TB1', N'Thông báo t1 đến tất cả trưởng phòng phụ trách tất cả các lĩnh vực không phân biệt chi nhánh.',  N'Trưởng phòng',  N'Mua bán, Sản xuất, Gia công', null, TO_DATE('2023-06-15', 'YYYY-MM-DD'));
 INSERT INTO THONGBAO (MATB, NOIDUNG, CAPBAC, LINHVUC, CHINHANH, NGAYTB) VALUES ('TB2', N'Thông báo t2 đến trưởng phòng phụ trách lĩnh vực sản xuất ở miền Trung.', N'Trưởng phòng', N'Sản xuất', N'Miền Trung', TO_DATE('2023-06-16', 'YYYY-MM-DD'));
 INSERT INTO THONGBAO (MATB, NOIDUNG, CAPBAC, LINHVUC, CHINHANH, NGAYTB) VALUES ('TB3', N'Thông báo t3 đến nhân viên phụ trách lĩnh vực gia công ở miền Nam', N'Nhân viên', N'Gia công', N'Miền Nam', TO_DATE('2023-06-17', 'YYYY-MM-DD'));
 
 -- Tạo user
+DROP USER TONGGIAMDOC CASCADE;
+DROP USER TRUONGPHONG_SANXUAT_MIENNAM CASCADE;
+DROP USER GIAMDOC_MIENBAC CASCADE;
+
 CREATE USER TONGGIAMDOC identified by "123";
 CREATE USER TRUONGPHONG_SANXUAT_MIENNAM identified by "123";
 CREATE USER GIAMDOC_MIENBAC identified by "123";
@@ -88,9 +92,6 @@ GRANT SELECT ON THONGBAO TO TONGGIAMDOC;
 GRANT SELECT ON THONGBAO TO TRUONGPHONG_SANXUAT_MIENNAM;
 GRANT SELECT ON THONGBAO TO GIAMDOC_MIENBAC;
 GRANT CREATE SESSION TO TONGGIAMDOC, TRUONGPHONG_SANXUAT_MIENNAM, GIAMDOC_MIENBAC;
-
-CONN DBA_QLTGDA/123@//LOCALHOST:1521/PDB_QLTGDA;
-SELECT * FROM THONGBAO;
 
 
 /*============================================================================*/
@@ -185,16 +186,23 @@ BEGIN
 END;
 /
 
+/*Kiểm tra Level, Compartment, Group vừa tạo*/
+SELECT * FROM DBA_SA_LEVELS;
+SELECT * FROM DBA_SA_COMPARTMENTS;
+SELECT * FROM DBA_SA_GROUPS;
+
+
 /*===========================================================================*/
 CONN DBA_QLTGDA/123@//LOCALHOST:1521/PDB_QLTGDA;
 -- Hàm gán label
 CREATE OR REPLACE FUNCTION DBA_QLTGDA.GAN_NHAN_THONGBAO
  (CAPBAC NVARCHAR2, LINHVUC NVARCHAR2, CHINHANH NVARCHAR2)
-RETURN LBACSYS.LBAC_LABEL
+RETURN VARCHAR2
 AS
  i_label varchar2(80);
+ --i_result LBACSYS.LBAC_LABEL;
 BEGIN
---------- Xác ??nh level
+--------- Xác định level
 IF CAPBAC = N'Giám đốc' THEN
     i_label := 'GD:';
 ELSIF CAPBAC = N'Trưởng phòng' THEN
@@ -226,11 +234,16 @@ IF CHINHANH LIKE N'%Miền Nam%' THEN
     i_label := i_label||'MN,';
 END IF;
 
-RETURN TO_LBAC_DATA_LABEL('XEM_THONG_BAO',i_label);
+--i_result := TO_LBAC_DATA_LABEL('XEM_THONG_BAO',i_label);
+RETURN i_label;
+
 END;
 /
 
+SELECT DBA_QLTGDA.GAN_NHAN_THONGBAO(N'Trưởng phòng', N'Sản xuất', N'Miền Bắc') FROM DUAL;
+
 GRANT EXECUTE ON DBA_QLTGDA.GAN_NHAN_THONGBAO TO LBACSYS;
+
 
 /*===========================================================================*/
 CONN LBACSYS/123;
@@ -244,17 +257,24 @@ BEGIN
     );
 END;
 /
+DECLARE
+  v_label VARCHAR2(80);
 BEGIN
-    sa_policy_admin.apply_table_policy (
-        policy_name     => 'XEM_THONG_BAO',
-        schema_name     => 'DBA_QLTGDA',
-        table_name      => 'THONGBAO',
-        table_options   => 'HIDE,READ_CONTROL',
-        label_function => 'DBA_QLTGDA.GAN_NHAN_THONGBAO(:new.capbac, :new.linhvuc, :new.chinhanh)',
-        PREDICATE => NULL);
+  v_label := DBA_QLTGDA.GAN_NHAN_THONGBAO(:new.capbac, :new.linhvuc, :new.chinhanh);
+
+  sa_policy_admin.apply_table_policy (
+    policy_name     => 'XEM_THONG_BAO',
+    schema_name     => 'DBA_QLTGDA',
+    table_name      => 'THONGBAO',
+    table_options   => 'HIDE,READ_CONTROL',
+    label_function => v_label,
+    PREDICATE => NULL
+  );
 END;
 /
 
+CONN LBACSYS/123;
+ALTER SESSION SET CONTAINER = PDB_QLTGDA;
 --Gán label lên user
 BEGIN
     sa_user_admin.set_user_labels (
@@ -282,4 +302,23 @@ BEGIN
     );
 END;
 /
+
+CONN TONGGIAMDOC/123@//LOCALHOST:1521/PDB_QLTGDA;
+SELECT * FROM DBA_QLTGDA.THONGBAO;
+
+CONN TRUONGPHONG_SANXUAT_MIENNAM/123@//LOCALHOST:1521/PDB_QLTGDA;
+SELECT * FROM DBA_QLTGDA.THONGBAO;
+
+CONN GIAMDOC_MIENBAC/123@//LOCALHOST:1521/PDB_QLTGDA;
+SELECT * FROM DBA_QLTGDA.THONGBAO;
+
+ALTER SESSION SET CONTAINER = PDB_QLTGDA;
+-- Kiểm tra nhãn cho dữ liệu
+SELECT MATB, NOIDUNG, CAPBAC, LINHVUC, CHINHANH, NGAYTB, LABEL_TO_CHAR(OLS_COLUMN) FROM DBA_QLTGDA.THONGBAO;
+
+
+
+
+
+
 
