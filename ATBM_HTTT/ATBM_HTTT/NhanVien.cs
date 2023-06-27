@@ -34,7 +34,7 @@ namespace ATBM_HTTT
             {
                 OracleConnection conn = Connection.GetDBConnection();
                 conn.Open();
-                string query = "select * from VIEW_NHANVIEN_XEM_THONGTIN_DEAN";
+                string query = @"select * from QLTGDA.VIEW_NHANVIEN_XEM_THONGTIN_DEAN";
                 dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridView.DataSource = Dataprovider.Instance.ExecuteQuery(query);
             }

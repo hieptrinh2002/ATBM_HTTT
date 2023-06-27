@@ -160,11 +160,13 @@ namespace ATBM_HTTT
 
 
                 }
+                reader = command.ExecuteReader();
+
                 while (reader.Read())
                 {
                     foreach (var item in defaultRole)
                     {
-                        if (item.ToString() == reader["GRABTED_ROLE"].ToString())
+                        if (item.ToString() == reader["GRANTED_ROLE"].ToString())
                             return item.ToString();
                     }
                     foreach (var item in defaultRole)
