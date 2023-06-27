@@ -248,3 +248,4 @@ D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\
 D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.QL_TrucTiep.resources
 D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.ShowProfile.resources
 D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.csprojAssemblyReference.cache
+D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.NhanSu.resources

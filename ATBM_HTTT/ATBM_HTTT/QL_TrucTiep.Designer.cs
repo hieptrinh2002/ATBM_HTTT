@@ -37,6 +37,7 @@ namespace ATBM_HTTT
             this.btn_infor = new System.Windows.Forms.Button();
             this.btn_pc = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.btn_DangXuat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,9 +56,10 @@ namespace ATBM_HTTT
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(40, 29);
+            this.label1.Location = new System.Drawing.Point(32, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 242);
+            this.label1.Padding = new System.Windows.Forms.Padding(10);
+            this.label1.Size = new System.Drawing.Size(265, 262);
             this.label1.TabIndex = 30;
             this.label1.Text = resources.GetString("label1.Text");
             // 
@@ -65,7 +67,7 @@ namespace ATBM_HTTT
             // 
             this.btn_PB.Location = new System.Drawing.Point(40, 441);
             this.btn_PB.Name = "btn_PB";
-            this.btn_PB.Size = new System.Drawing.Size(257, 56);
+            this.btn_PB.Size = new System.Drawing.Size(257, 60);
             this.btn_PB.TabIndex = 29;
             this.btn_PB.Text = "Danh Sách Phòng Ban";
             this.btn_PB.UseVisualStyleBackColor = true;
@@ -73,7 +75,7 @@ namespace ATBM_HTTT
             // 
             // btn_deAn
             // 
-            this.btn_deAn.Location = new System.Drawing.Point(40, 519);
+            this.btn_deAn.Location = new System.Drawing.Point(40, 523);
             this.btn_deAn.Name = "btn_deAn";
             this.btn_deAn.Size = new System.Drawing.Size(257, 61);
             this.btn_deAn.TabIndex = 28;
@@ -83,9 +85,9 @@ namespace ATBM_HTTT
             // 
             // btn_infor
             // 
-            this.btn_infor.Location = new System.Drawing.Point(40, 601);
+            this.btn_infor.Location = new System.Drawing.Point(40, 603);
             this.btn_infor.Name = "btn_infor";
-            this.btn_infor.Size = new System.Drawing.Size(257, 60);
+            this.btn_infor.Size = new System.Drawing.Size(257, 58);
             this.btn_infor.TabIndex = 27;
             this.btn_infor.Text = "Thông Tin Cá Nhân";
             this.btn_infor.UseVisualStyleBackColor = true;
@@ -104,19 +106,34 @@ namespace ATBM_HTTT
             // 
             // dataGridView
             // 
+            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(325, 29);
+            this.dataGridView.Location = new System.Drawing.Point(325, 12);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 62;
             this.dataGridView.RowTemplate.Height = 28;
-            this.dataGridView.Size = new System.Drawing.Size(889, 632);
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(1212, 649);
             this.dataGridView.TabIndex = 25;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            // 
+            // btn_DangXuat
+            // 
+            this.btn_DangXuat.Location = new System.Drawing.Point(698, 683);
+            this.btn_DangXuat.Name = "btn_DangXuat";
+            this.btn_DangXuat.Size = new System.Drawing.Size(428, 45);
+            this.btn_DangXuat.TabIndex = 32;
+            this.btn_DangXuat.Text = "Đăng Xuất";
+            this.btn_DangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_DangXuat.UseVisualStyleBackColor = true;
+            this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
             // 
             // QL_TrucTiep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 709);
+            this.ClientSize = new System.Drawing.Size(1549, 740);
+            this.Controls.Add(this.btn_DangXuat);
             this.Controls.Add(this.btn_dsNV);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_PB);
@@ -124,10 +141,12 @@ namespace ATBM_HTTT
             this.Controls.Add(this.btn_infor);
             this.Controls.Add(this.btn_pc);
             this.Controls.Add(this.dataGridView);
-            this.MinimumSize = new System.Drawing.Size(500, 500);
+            this.MaximumSize = new System.Drawing.Size(1571, 796);
+            this.MinimumSize = new System.Drawing.Size(1571, 765);
             this.Name = "QL_TrucTiep";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "QL_TrucTiep";
+            this.Text = "Nhan Viên Quản Lý Trực Tiếp";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -143,5 +162,6 @@ namespace ATBM_HTTT
         private System.Windows.Forms.Button btn_infor;
         private System.Windows.Forms.Button btn_pc;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button btn_DangXuat;
     }
 }

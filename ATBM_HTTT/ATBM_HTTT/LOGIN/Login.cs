@@ -79,28 +79,18 @@ namespace ATBM_HTTT
                 {
                     case "SYSADMIN":
                         this.Hide();
-                        ////t = new Thread(runMainForm);
-                        ////t.SetApartmentState(ApartmentState.STA);
-                        ////t.Start();
-
                         MainForm m = new MainForm();
                         m.ShowDialog();
-                        
                         break;
+
                     case "NHANVIEN":
                         this.Hide();
-                        //t = new Thread(runNhanVienform);
-                        //t.SetApartmentState(ApartmentState.STA);
-                        //t.Start();
                         NhanVien nv = new NhanVien();
                         nv.ShowDialog();
                         break;
+
                     case "QLTRUCTIEP":
                         this.Hide();
-                        //t = new Thread(runQuanLyTTForm);
-                        //t.SetApartmentState(ApartmentState.STA);
-                        //t.Start();
-
                         QL_TrucTiep ql = new QL_TrucTiep();
                         ql.ShowDialog();
                         break;
@@ -116,21 +106,20 @@ namespace ATBM_HTTT
                     //    t.SetApartmentState(ApartmentState.STA);
                     //    t.Start();
                     //    break;
-                    //case "NHANSU":
-                    //    this.Hide();
-                    //    //t = new Thread(run_NhanSu_Form);
-                    //    t.SetApartmentState(ApartmentState.STA);
-                    //    t.Start();
-                    //    break;
-                    //case "TRUONGDA":
-                    //    this.Hide();
-                    //    //t = new Thread(run_TruongDeAn_Form);
-                    //    t.SetApartmentState(ApartmentState.STA);
-                    //    t.Start();
-                    //    break;
-                    //default:
-                    //    MessageBox.Show(" Hệ thống hiện chưa hổ trợ UI cho giám đốc !");
-                    //    break;
+                    case "NHANSU":
+                        this.Hide();
+                        NhanSu ns = new NhanSu();
+                        ns.ShowDialog();
+                        break;
+                        //case "TRUONGDA":
+                        //    this.Hide();
+                        //    //t = new Thread(run_TruongDeAn_Form);
+                        //    t.SetApartmentState(ApartmentState.STA);
+                        //    t.Start();
+                        //    break;
+                        //default:
+                        //    MessageBox.Show(" Hệ thống hiện chưa hổ trợ UI cho giám đốc !");
+                        //    break;
 
                 }
                 this.Show();

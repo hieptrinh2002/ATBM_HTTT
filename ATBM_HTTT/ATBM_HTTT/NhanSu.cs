@@ -8,24 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
-
 namespace ATBM_HTTT
 {
-    public partial class QL_TrucTiep : Form
+    public partial class NhanSu : Form
     {
-        public QL_TrucTiep()
+        public NhanSu()
         {
             InitializeComponent();
         }
-        private void btn_pc_Click(object sender, EventArgs e)
+
+        private void button_DSPC_TC_Click(object sender, EventArgs e)
         {
             try
             {
                 OracleConnection conn = Connection.GetDBConnection();
                 conn.Open();
                 string query = @"select * from QLTGDA.UV_NHANVIEN_XEM_DSPHANCONG";
-                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridView.DataSource = Dataprovider.Instance.ExecuteQuery(query);
+                dataGridView_TC.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView_TC.DataSource = Dataprovider.Instance.ExecuteQuery(query);
                 conn.Close();
             }
             catch (Exception ex)
@@ -34,32 +34,15 @@ namespace ATBM_HTTT
             }
         }
 
-        private void btn_PB_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                OracleConnection conn = Connection.GetDBConnection();
-                conn.Open();
-                string query = @"select * from QLTGDA.VIEW_NHANVIEN_XEM_THONGTIN_PHONGBAN";
-                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridView.DataSource = Dataprovider.Instance.ExecuteQuery(query);
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("error: lỗi xem thông tin phòng ban !");
-            }
-        }
-
-        private void btn_deAn_Click(object sender, EventArgs e)
+        private void button_DSDA_TC_Click(object sender, EventArgs e)
         {
             try
             {
                 OracleConnection conn = Connection.GetDBConnection();
                 conn.Open();
                 string query = @"select * from QLTGDA.VIEW_NHANVIEN_XEM_THONGTIN_DEAN";
-                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridView.DataSource = Dataprovider.Instance.ExecuteQuery(query);
+                dataGridView_TC.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView_TC.DataSource = Dataprovider.Instance.ExecuteQuery(query);
                 conn.Close();
             }
             catch (Exception ex)
@@ -68,14 +51,17 @@ namespace ATBM_HTTT
             }
         }
 
-        private void btn_infor_Click(object sender, EventArgs e)
+        private void button_TTCN_TC_Click(object sender, EventArgs e)
         {
             OracleConnection conn = Connection.GetDBConnection();
             conn.Open();
-            string query = @"select * from QLTGDA.VIEW_NHANVIEN_XEMTHONGTIN_CANHAN";
+            string query = @"select * from QLTGDA.UV_XEMDS_NHANVIEN";////////////////////// CHANGE
             OracleCommand command = new OracleCommand(query, conn);
 
             var reader = command.ExecuteReader();
+
+            //MessageBox.Show(reader["MANV"].ToString());
+
 
             if (reader.HasRows)
             {
@@ -101,29 +87,51 @@ namespace ATBM_HTTT
             conn.Close();
         }
 
-        private void btn_dsNV_Click(object sender, EventArgs e)
+        private void button_DX_TC_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button_DSPB_QLPB_Click(object sender, EventArgs e)
         {
             try
             {
                 OracleConnection conn = Connection.GetDBConnection();
                 conn.Open();
-                string query = @"select * from QLTGDA.UV_XEMDS_NHANVIEN";
-                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridView.DataSource = Dataprovider.Instance.ExecuteQuery(query);
+                string query = @"select * from QLTGDA.VIEW_NHANVIEN_XEM_THONGTIN_PHONGBAN";
+                dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView2.DataSource = Dataprovider.Instance.ExecuteQuery(query);
                 conn.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error: lỗi xem danh sách nhan vien đang quản lý !");
+                MessageBox.Show("error: lỗi xem thông tin phòng ban !");
             }
         }
 
-        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void button_DX_QLPB_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void btn_DangXuat_Click(object sender, EventArgs e)
+        private void button_DSNV_QLNV_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OracleConnection conn = Connection.GetDBConnection();
+                conn.Open();
+                string query = @"select * from QLTGDA.UV_NHANSU_XEM_DS_NHANVIEN";
+                dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView3.DataSource = Dataprovider.Instance.ExecuteQuery(query);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error: lỗi xem danh sách nhân viên !");
+            }
+        }
+
+        private void button_DX_QLNV_Click(object sender, EventArgs e)
         {
             this.Close();
         }

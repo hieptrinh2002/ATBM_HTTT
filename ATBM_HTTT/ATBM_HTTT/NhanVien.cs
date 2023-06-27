@@ -44,7 +44,19 @@ namespace ATBM_HTTT
 
         private void btn_pc_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                OracleConnection conn = Connection.GetDBConnection();
+                conn.Open();
+                string query = @"select * from QLTGDA.UV_NHANVIEN_XEM_DSPHANCONG";
+                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView.DataSource = Dataprovider.Instance.ExecuteQuery(query);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error: lỗi xem thông tin phân công !");
+            }
         }
 
         private void btn_PB_Click(object sender, EventArgs e)
@@ -85,7 +97,7 @@ namespace ATBM_HTTT
         {
             OracleConnection conn = Connection.GetDBConnection();
             conn.Open();
-            string query = @"select * from QLTGDA.VIEW_NHANVIEN_XEMTHONGTIN_CANHAN";
+            string query = @"select * from QLTGDA.UV_XEMDS_NHANVIEN";////////////////////// CHANGE
             OracleCommand command = new OracleCommand(query, conn);
 
             var reader = command.ExecuteReader();
@@ -134,6 +146,11 @@ namespace ATBM_HTTT
         private void NhanVien_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_dangXuat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

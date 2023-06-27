@@ -77,7 +77,7 @@ namespace ATBM_HTTT
             // button_login
             // 
             this.button_login.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_login.Location = new System.Drawing.Point(201, 232);
+            this.button_login.Location = new System.Drawing.Point(192, 219);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(109, 40);
             this.button_login.TabIndex = 4;

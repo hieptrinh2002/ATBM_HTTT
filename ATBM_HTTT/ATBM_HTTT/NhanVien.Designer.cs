@@ -36,6 +36,7 @@ namespace ATBM_HTTT
             this.btn_deAn = new System.Windows.Forms.Button();
             this.btn_PB = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button_dangXuat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@ namespace ATBM_HTTT
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 62;
             this.dataGridView.RowTemplate.Height = 28;
-            this.dataGridView.Size = new System.Drawing.Size(874, 651);
+            this.dataGridView.Size = new System.Drawing.Size(1186, 656);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
@@ -104,20 +105,34 @@ namespace ATBM_HTTT
             this.label1.TabIndex = 9;
             this.label1.Text = resources.GetString("label1.Text");
             // 
+            // button_dangXuat
+            // 
+            this.button_dangXuat.Location = new System.Drawing.Point(671, 697);
+            this.button_dangXuat.Name = "button_dangXuat";
+            this.button_dangXuat.Size = new System.Drawing.Size(370, 45);
+            this.button_dangXuat.TabIndex = 10;
+            this.button_dangXuat.Text = "Đăng Xuất";
+            this.button_dangXuat.UseVisualStyleBackColor = true;
+            this.button_dangXuat.Click += new System.EventHandler(this.button_dangXuat_Click);
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1258, 724);
+            this.ClientSize = new System.Drawing.Size(1549, 754);
+            this.Controls.Add(this.button_dangXuat);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_PB);
             this.Controls.Add(this.btn_deAn);
             this.Controls.Add(this.btn_infor);
             this.Controls.Add(this.btn_pc);
             this.Controls.Add(this.dataGridView);
+            this.MaximumSize = new System.Drawing.Size(1571, 810);
+            this.MinimumSize = new System.Drawing.Size(1571, 765);
             this.Name = "NhanVien";
-            this.Text = "NhanVien";
+            this.Text = "Nhân Viên";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.NhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -133,5 +148,6 @@ namespace ATBM_HTTT
         private System.Windows.Forms.Button btn_deAn;
         private System.Windows.Forms.Button btn_PB;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button_dangXuat;
     }
 }
