@@ -18,6 +18,8 @@ namespace ATBM_HTTT
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new USERS_ROLES());
             Application.Run(new Login());
+            //Application.Run(new NhanVien());
+            //Application.Run(new QL_TrucTiep());
         }
     }
 }

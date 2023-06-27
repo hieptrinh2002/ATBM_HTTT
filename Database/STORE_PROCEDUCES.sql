@@ -108,7 +108,7 @@ begin
     end if;
 end;
 
-
+select * from all_users
 /-- TẠO LIST USER
 DECLARE
     CURSOR CURS IS (SELECT MANV,VAITRO FROM NHANVIEN WHERE MANV NOT IN (SELECT USERNAME FROM ALL_USERS));
@@ -125,22 +125,22 @@ BEGIN
         execute immediate('CREATE USER '||USERNAME||' IDENTIFIED BY '||USERNAME);
         execute immediate('GRANT CREATE SESSION TO '||USERNAME);
         execute immediate('GRANT CONNECT TO '||USERNAME);
-        IF (ROLE_VT = N'Nhân viên') THEN  
+        IF (ROLE_VT = N'Nh�n vi�n') THEN  
           execute immediate('GRANT NHANVIEN TO '||USERNAME);
 
-        ELSIF (ROLE_VT = N'QL trực tiếp') THEN 
+        ELSIF (ROLE_VT = N'QL tr?c ti?p') THEN 
           execute immediate('GRANT QLTRUCTIEP TO '||USERNAME);
 
-        ELSIF (ROLE_VT = N'Trưởng phòng') THEN 
+        ELSIF (ROLE_VT = N'Tr??ng ph�ng') THEN 
           execute immediate('GRANT TRUONGPHONG TO '||USERNAME);
           
-        ELSIF (ROLE_VT = N'Tài chính') THEN 
+        ELSIF (ROLE_VT = N'T�i ch�nh') THEN 
           execute immediate('GRANT TAICHINH TO '||USERNAME);
 
-        ELSIF (ROLE_VT = N'Nhân sự') THEN 
+        ELSIF (ROLE_VT = N'Nh�n s?') THEN 
           execute immediate('GRANT NHANSU TO '||USERNAME);
 
-        ELSIF (ROLE_VT = N'Trưởng đề án') THEN 
+        ELSIF (ROLE_VT = N'tr??ng ?? �n') THEN 
           execute immediate('GRANT TRUONGDA TO '||USERNAME);
         END IF;
       END LOOP;

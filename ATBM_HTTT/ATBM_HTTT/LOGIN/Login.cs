@@ -28,7 +28,14 @@ namespace ATBM_HTTT
         {
             Application.Run(new MainForm());// có thể truyền tham số 
         }
-
+        public void runNhanVienform(object obj)
+        {
+            Application.Run(new NhanVien());// có thể truyền tham số 
+        }
+        public void runQuanLyTTForm(object obj)
+        {
+            Application.Run(new MainForm());// có thể truyền tham số 
+        }
         private bool check_login()
         {
             try
@@ -76,18 +83,18 @@ namespace ATBM_HTTT
                         t.SetApartmentState(ApartmentState.STA);
                         t.Start();
                         break;
-                    //case "NHANVIEN":
-                    //    this.Hide();
-                    //    //t = new Thread(runMainForm);
-                    //    t.SetApartmentState(ApartmentState.STA);
-                    //    t.Start();
-                    //    break;
-                    //case "QLTRUCTIEP":
-                    //    this.Hide();
-                    //    //t = new Thread(run_QLTrucTiep_Form);
-                    //    t.SetApartmentState(ApartmentState.STA);
-                    //    t.Start();
-                    //    break;
+                    case "NHANVIEN":
+                        this.Hide();
+                        t = new Thread(runNhanVienform);
+                        t.SetApartmentState(ApartmentState.STA);
+                        t.Start();
+                        break;
+                    case "QLTRUCTIEP":
+                        this.Hide();
+                        t = new Thread(runQuanLyTTForm);
+                        t.SetApartmentState(ApartmentState.STA);
+                        t.Start();
+                        break;
                     //case "TRUONGPHONG":
                     //    this.Hide();
                     //    //t = new Thread(run_TruongPhong_Form);
@@ -114,9 +121,9 @@ namespace ATBM_HTTT
                     //    break;
 
 
-                    default:
-                        MessageBox.Show(" Hệ thống hiện chưa hổ trợ UI cho giám đốc !");
-                        break;
+                    //default:
+                    //    MessageBox.Show(" Hệ thống hiện chưa hổ trợ UI cho giám đốc !");
+                    //    break;
 
                 }
                 MessageBox.Show(" đăng nhập thành công !");
