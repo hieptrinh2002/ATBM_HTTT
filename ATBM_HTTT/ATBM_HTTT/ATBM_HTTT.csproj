@@ -184,6 +184,12 @@
     <Compile Include="QL_TrucTiep.Designer.cs">
       <DependentUpon>QL_TrucTiep.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowProfile.Designer.cs">
+      <DependentUpon>ShowProfile.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +228,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="PHANHE1\USER_OPTIONS\UpdateUser.resx">
       <DependentUpon>UpdateUser.cs</DependentUpon>
@@ -231,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QL_TrucTiep.resx">
       <DependentUpon>QL_TrucTiep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowProfile.resx">
+      <DependentUpon>ShowProfile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
@@ -254,6 +264,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PHANHE2\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" />

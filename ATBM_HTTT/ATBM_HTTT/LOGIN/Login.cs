@@ -126,6 +126,7 @@ namespace ATBM_HTTT
                     //    break;
 
                 }
+
                 MessageBox.Show(" đăng nhập thành công !");
             }
             else
@@ -141,6 +142,8 @@ namespace ATBM_HTTT
             conn.Open();
             String SQL = @"SELECT GRANTED_ROLE FROM DBA_ROLE_PRIVS WHERE GRANTEE =  '" + Connection.username + "'";
             OracleCommand command = new OracleCommand(SQL, conn);
+            
+            
             //command.CommandType = CommandType.Text;
             //var username = new OracleParameter("@username", "");
             //command.Parameters.Add(username);

@@ -42,11 +42,11 @@ namespace ATBM_HTTT
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(351, 47);
+            this.dataGridView.Location = new System.Drawing.Point(351, 19);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 62;
             this.dataGridView.RowTemplate.Height = 28;
-            this.dataGridView.Size = new System.Drawing.Size(874, 623);
+            this.dataGridView.Size = new System.Drawing.Size(874, 651);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
@@ -94,11 +94,13 @@ namespace ATBM_HTTT
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(55, 35);
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(29, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 202);
+            this.label1.Padding = new System.Windows.Forms.Padding(20);
+            this.label1.Size = new System.Drawing.Size(285, 242);
             this.label1.TabIndex = 9;
             this.label1.Text = resources.GetString("label1.Text");
             // 
@@ -106,6 +108,7 @@ namespace ATBM_HTTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1258, 724);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_PB);
@@ -115,6 +118,7 @@ namespace ATBM_HTTT
             this.Controls.Add(this.dataGridView);
             this.Name = "NhanVien";
             this.Text = "NhanVien";
+            this.Load += new System.EventHandler(this.NhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
