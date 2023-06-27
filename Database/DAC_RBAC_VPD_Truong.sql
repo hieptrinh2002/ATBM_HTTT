@@ -46,10 +46,13 @@ CREATE ROLE TAICHINH;
 CREATE ROLE NHANSU;
 /
 CREATE ROLE TRUONGDA;
-/
 
 --CS#1: NHAN VIEN 
-
+/
+GRANT SELECT ON DBA_ROLE_PRIVS TO NHANVIEN; 
+/
+GRANT UPDATE(TENNV,DIACHI,NGAYSINH,SODT) ON NHANVIEN TO NHANVIEN;
+/
 CREATE OR REPLACE VIEW VIEW_NHANVIEN_XEMTHONGTIN_CANHAN
 AS
     SELECT *
@@ -74,7 +77,8 @@ CREATE OR REPLACE VIEW VIEW_TRUONGPHONG_THAOTAC_PHANCONG
 /
 
 --GRANT QUYEN ROLE NHANVIEN
-
+GRANT EXECUTE ON UPDATE_PROFILE TO  NHANVIEN;
+/
 GRANT SELECT, UPDATE (NGAYSINH,DIACHI,SODT) ON VIEW_NHANVIEN_XEMTHONGTIN_CANHAN TO NHANVIEN;
 /
 GRANT SELECT ON VIEW_NHANVIEN_XEM_THONGTIN_PHONGBAN TO NHANVIEN;
@@ -83,7 +87,7 @@ GRANT SELECT ON VIEW_NHANVIEN_XEM_THONGTIN_DEAN TO NHANVIEN;
 /
 GRANT SELECT ON PHANCONG TO NHANVIEN; --(CAN CAI DAT VPD_1) 
 
---VPD 1: Nhân viên có quyền xem tất cả các thuộc tính trên quan hệ PHANCONG liên quan đến chính nhân viên đó.
+--VPD 1: Nhân viên có quy�?n xem tất cả các thuộc tính trên quan hệ PHANCONG liên quan đến chính nhân viên đó.
 
 CREATE OR REPLACE FUNCTION THONGTIN_PHANCONG
     (schema_name IN VARCHAR2, table_name IN VARCHAR2)
@@ -173,7 +177,7 @@ BEGIN
     );
 END;
 
--- QUAN LY TRUC TIEP có thể xem các dòng trong quan hệ PHANCONG liên quan đến chính họ và các nhân viên được họ quản lý trực tiếp
+-- QUAN LY TRUC TIEP có thể xem các dòng trong quan hệ PHANCONG liên quan đến chính h�? và các nhân viên được h�? quản lý trực tiếp
  --GRANT SELECT ON PHANCONG TO QLTRUCTIEP;(đã kế thừa từ NHANVIEN) --(CAN CAI DAT VPD_1)
  -- DUNG VPD VPD_THONGTIN_PHANCONG_POLICY DA CAI DAT O TREN
 /
@@ -243,7 +247,7 @@ END;
 /
 --CS#4: TAI CHINH
 GRANT NHANVIEN TO TAICHINH; 
-  -- TẠO TRIGGER XỬ LÍ CHỔ CHỈ UPDATE LUONG NV - GIAM DOC
+  -- TẠO TRIGGER XỬ L�? CHỔ CHỈ UPDATE LUONG NV - GIAM DOC
 /
 
 --CS#5: NhanSu
@@ -254,7 +258,7 @@ GRANT INSERT, UPDATE ON PHONGBAN TO NHANSU;
 /   
 GRANT UPDATE (MANV,TENNV,PHAI,NGAYSINH,DIACHI,SODT,VAITRO,MANQL,PHG) ON NHANVIEN TO NHANSU;
     -- cài đặt proc để insert, update The Nhan vien với lương và phụ cấp có gt là NULL 
--- CAI VPD: Nhan Su không được xem LUONG, PHUCAP của người khác và không được cập nhật trên các trường LUONG, PHUCAP.
+-- CAI VPD: Nhan Su không được xem LUONG, PHUCAP của ngư�?i khác và không được cập nhật trên các trư�?ng LUONG, PHUCAP.
 
 
 CREATE OR REPLACE FUNCTION NHANSU_VPD_POLICY

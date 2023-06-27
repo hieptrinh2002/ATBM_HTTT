@@ -204,7 +204,6 @@ D:\An toàn và bảo mật trong hệ thống thông tin\final\ATBM_HTTT\ATBM_H
 D:\An toàn và bảo mật trong hệ thống thông tin\final\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.csproj.CopyComplete
 D:\An toàn và bảo mật trong hệ thống thông tin\final\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.exe
 D:\An toàn và bảo mật trong hệ thống thông tin\final\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.pdb
-D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.csprojAssemblyReference.cache
 D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.DatabaseManager.resources
 D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.Login.resources
 D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.MainForm.resources

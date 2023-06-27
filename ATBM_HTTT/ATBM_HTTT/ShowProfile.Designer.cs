@@ -220,7 +220,7 @@ namespace ATBM_HTTT
             // 
             // textBox_sdt
             // 
-            this.textBox_sdt.Location = new System.Drawing.Point(153, 273);
+            this.textBox_sdt.Location = new System.Drawing.Point(153, 283);
             this.textBox_sdt.Name = "textBox_sdt";
             this.textBox_sdt.Size = new System.Drawing.Size(495, 26);
             this.textBox_sdt.TabIndex = 20;
@@ -228,7 +228,7 @@ namespace ATBM_HTTT
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(26, 276);
+            this.label10.Location = new System.Drawing.Point(26, 286);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(102, 20);
             this.label10.TabIndex = 19;
