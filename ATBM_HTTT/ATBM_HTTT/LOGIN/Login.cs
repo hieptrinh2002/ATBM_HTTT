@@ -34,7 +34,7 @@ namespace ATBM_HTTT
         }
         public void runQuanLyTTForm(object obj)
         {
-            Application.Run(new MainForm());// có thể truyền tham số 
+            Application.Run(new QL_TrucTiep());// có thể truyền tham số 
         }
         private bool check_login()
         {
@@ -46,7 +46,7 @@ namespace ATBM_HTTT
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("connection login bi loi !!!");
                 return false;
             }
         }
@@ -79,21 +79,30 @@ namespace ATBM_HTTT
                 {
                     case "SYSADMIN":
                         this.Hide();
-                        t = new Thread(runMainForm);
-                        t.SetApartmentState(ApartmentState.STA);
-                        t.Start();
+                        ////t = new Thread(runMainForm);
+                        ////t.SetApartmentState(ApartmentState.STA);
+                        ////t.Start();
+
+                        MainForm m = new MainForm();
+                        m.ShowDialog();
+                        
                         break;
                     case "NHANVIEN":
                         this.Hide();
-                        t = new Thread(runNhanVienform);
-                        t.SetApartmentState(ApartmentState.STA);
-                        t.Start();
+                        //t = new Thread(runNhanVienform);
+                        //t.SetApartmentState(ApartmentState.STA);
+                        //t.Start();
+                        NhanVien nv = new NhanVien();
+                        nv.ShowDialog();
                         break;
                     case "QLTRUCTIEP":
                         this.Hide();
-                        t = new Thread(runQuanLyTTForm);
-                        t.SetApartmentState(ApartmentState.STA);
-                        t.Start();
+                        //t = new Thread(runQuanLyTTForm);
+                        //t.SetApartmentState(ApartmentState.STA);
+                        //t.Start();
+
+                        QL_TrucTiep ql = new QL_TrucTiep();
+                        ql.ShowDialog();
                         break;
                     //case "TRUONGPHONG":
                     //    this.Hide();
@@ -119,15 +128,12 @@ namespace ATBM_HTTT
                     //    t.SetApartmentState(ApartmentState.STA);
                     //    t.Start();
                     //    break;
-
-
                     //default:
                     //    MessageBox.Show(" Hệ thống hiện chưa hổ trợ UI cho giám đốc !");
                     //    break;
 
                 }
-
-                MessageBox.Show(" đăng nhập thành công !");
+                this.Show();
             }
             else
             {
@@ -170,11 +176,6 @@ namespace ATBM_HTTT
                     foreach (var item in defaultRole)
                     {
                         if (item.ToString() == reader["GRANTED_ROLE"].ToString())
-                            return item.ToString();
-                    }
-                    foreach (var item in defaultRole)
-                    {
-                        if (item.ToString() == reader.Read().ToString())
                             return item.ToString();
                     }
                 }
