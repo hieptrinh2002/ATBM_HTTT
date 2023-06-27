@@ -6,6 +6,17 @@
 - xem danh sach nhan vien minh quan ly (- luong , phu cap) (VPD_2)
 - xem các dòng trong quan hệ PHANCONG liên quan đến chính Q và các nhân viên N
 được quản lý trực tiếp bởi Q. => ( VPD_1 ) 
+
+select *  from phancong (manv,mada,thowifgian)
+
+user = SYS_CONTEXT('USERENV','SESSION_USER')
+ if( role = NVQLTT) 
+return " user = manv or pc.manv in ( slect manv from nhanvien nv where nv.manql = user) "
+else
+return return " user = manv "
+
+
+
 #3**Truong Phong: NhanVien ( ke thua )
 - xem danh sach nhan vien thuoc Phong Ban minh quan ly (- luong , phu cap) (VPD_2)
 - insert, delete, update tren PHANCONG cua nhan vien thuoc phong ban minh quan li (DAC-RBAC)
