@@ -135,5 +135,17 @@ namespace ATBM_HTTT
         {
             this.Close();
         }
+
+        private void button_TPB_QLPB_Click(object sender, EventArgs e)
+        {
+            ThemPhongBan tpb = new ThemPhongBan();
+            tpb.ShowDialog();
+        }
+
+        private void button_CNPB_QLPB_Click(object sender, EventArgs e)
+        {
+            UpdatePhongBan pb = new UpdatePhongBan();
+            pb.ShowDialog();
+        }
     }
 }

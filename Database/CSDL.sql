@@ -361,10 +361,6 @@ VALUES ('DA0007', N'Nghiên cứu xu hướng thị trường', to_date('12/06/2
 
 
 
-
-
-
-
 INSERT INTO PHANCONG (MANV, MADA, THOIGIAN)  VALUES ('NV001', 'DA0001', to_date('25/06/2023', 'DD/MM/YYYY'));
 
 INSERT INTO PHANCONG (MANV, MADA, THOIGIAN)  VALUES ('NV001', 'DA0002', to_date('25/06/2023', 'DD/MM/YYYY'));

@@ -196,6 +196,18 @@
     <Compile Include="ShowProfile.Designer.cs">
       <DependentUpon>ShowProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemPhongBan.Designer.cs">
+      <DependentUpon>ThemPhongBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePhongBan.Designer.cs">
+      <DependentUpon>UpdatePhongBan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="NhanSu.resx">
       <DependentUpon>NhanSu.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +262,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShowProfile.resx">
       <DependentUpon>ShowProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemPhongBan.resx">
+      <DependentUpon>ThemPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePhongBan.resx">
+      <DependentUpon>UpdatePhongBan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>

@@ -125,22 +125,22 @@ BEGIN
         execute immediate('CREATE USER '||USERNAME||' IDENTIFIED BY '||USERNAME);
         execute immediate('GRANT CREATE SESSION TO '||USERNAME);
         execute immediate('GRANT CONNECT TO '||USERNAME);
-        IF (ROLE_VT = N'Nh�n vi�n') THEN  
+        IF (ROLE_VT = N'Nh�n vi�n') THEN  
           execute immediate('GRANT NHANVIEN TO '||USERNAME);
 
-        ELSIF (ROLE_VT = N'QL tr?c ti?p') THEN 
+        ELSIF (ROLE_VT = N'QL trực tiếp') THEN 
           execute immediate('GRANT QLTRUCTIEP TO '||USERNAME);
 
-        ELSIF (ROLE_VT = N'Tr??ng ph�ng') THEN 
+        ELSIF (ROLE_VT = N'Trưởng phòng') THEN 
           execute immediate('GRANT TRUONGPHONG TO '||USERNAME);
           
-        ELSIF (ROLE_VT = N'T�i ch�nh') THEN 
+        ELSIF (ROLE_VT = N'Tài chính') THEN 
           execute immediate('GRANT TAICHINH TO '||USERNAME);
 
-        ELSIF (ROLE_VT = N'Nh�n s?') THEN 
+        ELSIF (ROLE_VT = N'Nhân sự') THEN 
           execute immediate('GRANT NHANSU TO '||USERNAME);
 
-        ELSIF (ROLE_VT = N'tr??ng ?? �n') THEN 
+        ELSIF (ROLE_VT = N'trưởng đề án') THEN 
           execute immediate('GRANT TRUONGDA TO '||USERNAME);
         END IF;
       END LOOP;

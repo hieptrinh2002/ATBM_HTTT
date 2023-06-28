@@ -178,6 +178,7 @@ namespace ATBM_HTTT
             this.button_CNPB_QLPB.TabIndex = 55;
             this.button_CNPB_QLPB.Text = "Cập nhật Phòng Ban";
             this.button_CNPB_QLPB.UseVisualStyleBackColor = true;
+            this.button_CNPB_QLPB.Click += new System.EventHandler(this.button_CNPB_QLPB_Click);
             // 
             // label2
             // 
@@ -212,6 +213,7 @@ namespace ATBM_HTTT
             this.button_TPB_QLPB.TabIndex = 52;
             this.button_TPB_QLPB.Text = "Thêm Phòng Ban";
             this.button_TPB_QLPB.UseVisualStyleBackColor = true;
+            this.button_TPB_QLPB.Click += new System.EventHandler(this.button_TPB_QLPB_Click);
             // 
             // button_DSPB_QLPB
             // 
