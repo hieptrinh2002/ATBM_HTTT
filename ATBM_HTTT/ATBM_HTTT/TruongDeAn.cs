@@ -1,0 +1,103 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Oracle.DataAccess.Client;
+
+namespace ATBM_HTTT
+{
+    public partial class TruongDeAn : Form
+    {
+        public TruongDeAn()
+        {
+            InitializeComponent();
+        }
+
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
+        }
+
+        private void btn_ThongTin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OracleConnection conn = Connection.GetDBConnection();
+                conn.Open();
+                string query = @"select * from QLTGDA.VIEW_NHANVIEN_XEMTHONGTIN_CANHAN";
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.DataSource = Dataprovider.Instance.ExecuteQuery(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error: " + ex.ToString());
+            }
+        }
+
+        private void btn_CapNhat_Click(object sender, EventArgs e)
+        {
+            CapNhatThongTin screen = new CapNhatThongTin();
+            screen.Show();
+        }
+
+        private void btn_ThongTinPB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OracleConnection conn = Connection.GetDBConnection();
+                conn.Open();
+                string query = @"select * from QLTGDA.VIEW_NHANVIEN_XEM_THONGTIN_PHONGBAN";
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.DataSource = Dataprovider.Instance.ExecuteQuery(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error: " + ex.ToString());
+            }
+        }
+
+        private void btn_ThongTinPC_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OracleConnection conn = Connection.GetDBConnection();
+                conn.Open();
+                string query = @"select * from QLTGDA.UV_NHANVIEN_XEM_DSPHANCONG";
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.DataSource = Dataprovider.Instance.ExecuteQuery(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error: " + ex.ToString());
+            }
+        }
+
+        private void btn_ThongTinDA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OracleConnection conn = Connection.GetDBConnection();
+                conn.Open();
+                string query = @"select * from QLTGDA.VIEW_HIENTHI_ALL_DEAN";
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.DataSource = Dataprovider.Instance.ExecuteQuery(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error: " + ex.ToString());
+            }
+        }
+
+        private void btn_ThemDA_Click(object sender, EventArgs e)
+        {
+            ThemDeAn screen = new ThemDeAn();
+            screen.Show();
+        }
+    }
+}

@@ -36,6 +36,10 @@ namespace ATBM_HTTT
         {
             Application.Run(new QL_TrucTiep());// có thể truyền tham số 
         }
+        public void runTruongDeAnForm(object obj)
+        {
+            Application.Run(new TruongDeAn());
+        }
         private bool check_login()
         {
             try
@@ -111,15 +115,15 @@ namespace ATBM_HTTT
                         NhanSu ns = new NhanSu();
                         ns.ShowDialog();
                         break;
-                        //case "TRUONGDA":
-                        //    this.Hide();
-                        //    //t = new Thread(run_TruongDeAn_Form);
-                        //    t.SetApartmentState(ApartmentState.STA);
-                        //    t.Start();
-                        //    break;
-                        //default:
-                        //    MessageBox.Show(" Hệ thống hiện chưa hổ trợ UI cho giám đốc !");
-                        //    break;
+                    case "TRUONGDA":
+                        this.Hide();
+                        t = new Thread(runTruongDeAnForm);
+                        t.SetApartmentState(ApartmentState.STA);
+                        t.Start();
+                        break;
+                    default:
+                        MessageBox.Show(" Hệ thống hiện chưa hổ trợ UI cho giám đốc !");
+                        break;
 
                 }
                 this.Show();
