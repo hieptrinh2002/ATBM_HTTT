@@ -294,6 +294,6 @@ C:\Users\PC\Source\Repos\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.c
 C:\Users\PC\Source\Repos\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.csproj.CopyComplete
 C:\Users\PC\Source\Repos\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.exe
 C:\Users\PC\Source\Repos\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.pdb
-C:\Users\PC\Source\Repos\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.CapNhatThongTin.resources
 C:\Users\PC\Source\Repos\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.ThemDeAn.resources
 C:\Users\PC\Source\Repos\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.TruongDeAn.resources
+C:\Users\PC\source\repos\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.Xoa_SuaDeAn.resources

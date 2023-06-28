@@ -31,19 +31,35 @@ namespace ATBM_HTTT
                 OracleConnection conn = Connection.GetDBConnection();
                 conn.Open();
                 string query = @"select * from QLTGDA.VIEW_NHANVIEN_XEMTHONGTIN_CANHAN";
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridView1.DataSource = Dataprovider.Instance.ExecuteQuery(query);
+                OracleCommand command = new OracleCommand(query, conn);
+
+                var reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        NhanVien nv = new NhanVien(
+                           reader["MANV"].ToString(),
+                           reader["TENNV"].ToString(),
+                           reader["PHAI"].ToString(),
+                           reader["NGAYSINH"].ToString(),
+                           reader["SODT"].ToString(),
+                           reader["LUONG"].ToString(),
+                           reader["PHUCAP"].ToString(),
+                           reader["PHG"].ToString(),
+                           reader["DIACHI"].ToString());
+
+                        Form f = new ShowProfile(nv);
+                        f.ShowDialog();
+                    }
+                }
+
+                conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("error: " + ex.ToString());
             }
-        }
-
-        private void btn_CapNhat_Click(object sender, EventArgs e)
-        {
-            CapNhatThongTin screen = new CapNhatThongTin();
-            screen.Show();
         }
 
         private void btn_ThongTinPB_Click(object sender, EventArgs e)
@@ -97,6 +113,12 @@ namespace ATBM_HTTT
         private void btn_ThemDA_Click(object sender, EventArgs e)
         {
             ThemDeAn screen = new ThemDeAn();
+            screen.Show();
+        }
+
+        private void btn_Xoa_Sua_Click(object sender, EventArgs e)
+        {
+            Xoa_SuaDeAn screen = new Xoa_SuaDeAn();
             screen.Show();
         }
     }

@@ -34,8 +34,8 @@
             this.btn_ThongTinDA = new System.Windows.Forms.Button();
             this.btn_ThongTinPC = new System.Windows.Forms.Button();
             this.btn_ThongTinPB = new System.Windows.Forms.Button();
-            this.btn_CapNhat = new System.Windows.Forms.Button();
             this.btn_ThongTin = new System.Windows.Forms.Button();
+            this.btn_Xoa_Sua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +43,7 @@
             // 
             this.btn_ThemDA.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_ThemDA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ThemDA.Location = new System.Drawing.Point(19, 540);
+            this.btn_ThemDA.Location = new System.Drawing.Point(19, 442);
             this.btn_ThemDA.Name = "btn_ThemDA";
             this.btn_ThemDA.Size = new System.Drawing.Size(204, 61);
             this.btn_ThemDA.TabIndex = 13;
@@ -54,7 +54,7 @@
             // btn_Logout
             // 
             this.btn_Logout.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btn_Logout.Location = new System.Drawing.Point(1097, 628);
+            this.btn_Logout.Location = new System.Drawing.Point(1097, 636);
             this.btn_Logout.Name = "btn_Logout";
             this.btn_Logout.Size = new System.Drawing.Size(131, 46);
             this.btn_Logout.TabIndex = 12;
@@ -69,7 +69,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(970, 562);
+            this.dataGridView1.Size = new System.Drawing.Size(970, 570);
             this.dataGridView1.TabIndex = 11;
             // 
             // btn_ThongTinDA
@@ -77,7 +77,7 @@
             this.btn_ThongTinDA.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_ThongTinDA.FlatAppearance.BorderSize = 0;
             this.btn_ThongTinDA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ThongTinDA.Location = new System.Drawing.Point(19, 428);
+            this.btn_ThongTinDA.Location = new System.Drawing.Point(19, 340);
             this.btn_ThongTinDA.Name = "btn_ThongTinDA";
             this.btn_ThongTinDA.Size = new System.Drawing.Size(204, 61);
             this.btn_ThongTinDA.TabIndex = 6;
@@ -90,7 +90,7 @@
             this.btn_ThongTinPC.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_ThongTinPC.FlatAppearance.BorderSize = 0;
             this.btn_ThongTinPC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ThongTinPC.Location = new System.Drawing.Point(19, 335);
+            this.btn_ThongTinPC.Location = new System.Drawing.Point(19, 233);
             this.btn_ThongTinPC.Name = "btn_ThongTinPC";
             this.btn_ThongTinPC.Size = new System.Drawing.Size(204, 61);
             this.btn_ThongTinPC.TabIndex = 7;
@@ -103,26 +103,13 @@
             this.btn_ThongTinPB.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_ThongTinPB.FlatAppearance.BorderSize = 0;
             this.btn_ThongTinPB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ThongTinPB.Location = new System.Drawing.Point(19, 240);
+            this.btn_ThongTinPB.Location = new System.Drawing.Point(19, 132);
             this.btn_ThongTinPB.Name = "btn_ThongTinPB";
             this.btn_ThongTinPB.Size = new System.Drawing.Size(204, 61);
             this.btn_ThongTinPB.TabIndex = 8;
             this.btn_ThongTinPB.Text = "Thông tin phòng ban";
             this.btn_ThongTinPB.UseVisualStyleBackColor = false;
             this.btn_ThongTinPB.Click += new System.EventHandler(this.btn_ThongTinPB_Click);
-            // 
-            // btn_CapNhat
-            // 
-            this.btn_CapNhat.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btn_CapNhat.FlatAppearance.BorderSize = 0;
-            this.btn_CapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CapNhat.Location = new System.Drawing.Point(19, 135);
-            this.btn_CapNhat.Name = "btn_CapNhat";
-            this.btn_CapNhat.Size = new System.Drawing.Size(204, 61);
-            this.btn_CapNhat.TabIndex = 9;
-            this.btn_CapNhat.Text = "Cập nhật thông tin";
-            this.btn_CapNhat.UseVisualStyleBackColor = false;
-            this.btn_CapNhat.Click += new System.EventHandler(this.btn_CapNhat_Click);
             // 
             // btn_ThongTin
             // 
@@ -137,18 +124,30 @@
             this.btn_ThongTin.UseVisualStyleBackColor = false;
             this.btn_ThongTin.Click += new System.EventHandler(this.btn_ThongTin_Click);
             // 
+            // btn_Xoa_Sua
+            // 
+            this.btn_Xoa_Sua.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_Xoa_Sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xoa_Sua.Location = new System.Drawing.Point(19, 545);
+            this.btn_Xoa_Sua.Name = "btn_Xoa_Sua";
+            this.btn_Xoa_Sua.Size = new System.Drawing.Size(204, 61);
+            this.btn_Xoa_Sua.TabIndex = 14;
+            this.btn_Xoa_Sua.Text = "Xóa/Sửa đề án";
+            this.btn_Xoa_Sua.UseVisualStyleBackColor = false;
+            this.btn_Xoa_Sua.Click += new System.EventHandler(this.btn_Xoa_Sua_Click);
+            // 
             // TruongDeAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 699);
+            this.ClientSize = new System.Drawing.Size(1264, 733);
+            this.Controls.Add(this.btn_Xoa_Sua);
             this.Controls.Add(this.btn_ThemDA);
             this.Controls.Add(this.btn_Logout);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_ThongTinDA);
             this.Controls.Add(this.btn_ThongTinPC);
             this.Controls.Add(this.btn_ThongTinPB);
-            this.Controls.Add(this.btn_CapNhat);
             this.Controls.Add(this.btn_ThongTin);
             this.Name = "TruongDeAn";
             this.Text = "TruongDeAn";
@@ -165,7 +164,7 @@
         private System.Windows.Forms.Button btn_ThongTinDA;
         private System.Windows.Forms.Button btn_ThongTinPC;
         private System.Windows.Forms.Button btn_ThongTinPB;
-        private System.Windows.Forms.Button btn_CapNhat;
         private System.Windows.Forms.Button btn_ThongTin;
+        private System.Windows.Forms.Button btn_Xoa_Sua;
     }
 }

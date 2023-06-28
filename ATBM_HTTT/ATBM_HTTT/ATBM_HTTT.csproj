@@ -102,12 +102,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CapNhatThongTin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapNhatThongTin.Designer.cs">
-      <DependentUpon>CapNhatThongTin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="NhanSu.cs">
       <SubType>Form</SubType>
@@ -214,9 +208,12 @@
     <Compile Include="TruongDeAn.Designer.cs">
       <DependentUpon>TruongDeAn.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CapNhatThongTin.resx">
-      <DependentUpon>CapNhatThongTin.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Xoa_SuaDeAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Xoa_SuaDeAn.Designer.cs">
+      <DependentUpon>Xoa_SuaDeAn.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="NhanSu.resx">
       <DependentUpon>NhanSu.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TruongDeAn.resx">
       <DependentUpon>TruongDeAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xoa_SuaDeAn.resx">
+      <DependentUpon>Xoa_SuaDeAn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>

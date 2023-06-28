@@ -97,7 +97,7 @@ namespace ATBM_HTTT
         {
             OracleConnection conn = Connection.GetDBConnection();
             conn.Open();
-            string query = @"select * from QLTGDA.UV_XEMDS_NHANVIEN";////////////////////// CHANGE
+            string query = @"select * from QLTGDA.VIEW_NHANVIEN_XEMTHONGTIN_CANHAN";////////////////////// CHANGE
             OracleCommand command = new OracleCommand(query, conn);
 
             var reader = command.ExecuteReader();
