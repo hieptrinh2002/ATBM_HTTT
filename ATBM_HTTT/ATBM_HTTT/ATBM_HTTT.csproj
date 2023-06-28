@@ -102,10 +102,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CapNhatNhanvien.cs">
+    <Compile Include="NHANSU\CapNhatNhanvien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CapNhatNhanvien.Designer.cs">
+    <Compile Include="NHANSU\CapNhatNhanvien.Designer.cs">
       <DependentUpon>CapNhatNhanvien.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
@@ -214,13 +214,49 @@
     <Compile Include="NHANSU\UpdatePhongBan.Designer.cs">
       <DependentUpon>UpdatePhongBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemNhanVien.cs">
+    <Compile Include="NHANSU\ThemNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemNhanVien.Designer.cs">
+    <Compile Include="NHANSU\ThemNhanVien.Designer.cs">
       <DependentUpon>ThemNhanVien.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CapNhatNhanvien.resx">
+    <Compile Include="TaiChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaiChinh.Designer.cs">
+      <DependentUpon>TaiChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TRUONGDEAN\ThemDeAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRUONGDEAN\ThemDeAn.Designer.cs">
+      <DependentUpon>ThemDeAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TRUONGDEAN\TruongDeAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRUONGDEAN\TruongDeAn.Designer.cs">
+      <DependentUpon>TruongDeAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TRUONGPHONG\TruongPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRUONGPHONG\TruongPhong.Designer.cs">
+      <DependentUpon>TruongPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TRUONGPHONG\XuLyPhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRUONGPHONG\XuLyPhanCong.Designer.cs">
+      <DependentUpon>XuLyPhanCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TRUONGDEAN\Xoa_SuaDeAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRUONGDEAN\Xoa_SuaDeAn.Designer.cs">
+      <DependentUpon>Xoa_SuaDeAn.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="NHANSU\CapNhatNhanvien.resx">
       <DependentUpon>CapNhatNhanvien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NHANSU\NhanSu.resx">
@@ -284,8 +320,26 @@
     <EmbeddedResource Include="NHANSU\UpdatePhongBan.resx">
       <DependentUpon>UpdatePhongBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemNhanVien.resx">
+    <EmbeddedResource Include="NHANSU\ThemNhanVien.resx">
       <DependentUpon>ThemNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaiChinh.resx">
+      <DependentUpon>TaiChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TRUONGDEAN\ThemDeAn.resx">
+      <DependentUpon>ThemDeAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TRUONGDEAN\TruongDeAn.resx">
+      <DependentUpon>TruongDeAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TRUONGPHONG\TruongPhong.resx">
+      <DependentUpon>TruongPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TRUONGPHONG\XuLyPhanCong.resx">
+      <DependentUpon>XuLyPhanCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TRUONGDEAN\Xoa_SuaDeAn.resx">
+      <DependentUpon>Xoa_SuaDeAn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>

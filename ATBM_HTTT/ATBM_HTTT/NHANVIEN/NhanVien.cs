@@ -128,29 +128,15 @@ namespace ATBM_HTTT
 
             conn.Close();
         }
-        public static void refresh_Datagridview()
+
+        private void button_dangXuat_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
 
         private void NhanVien_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void button_dangXuat_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

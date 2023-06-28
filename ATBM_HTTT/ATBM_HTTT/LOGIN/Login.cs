@@ -24,18 +24,7 @@ namespace ATBM_HTTT
         {
 
         }
-        public void runMainForm(object obj)
-        {
-            Application.Run(new MainForm());// có thể truyền tham số 
-        }
-        public void runNhanVienform(object obj)
-        {
-            Application.Run(new NhanVien());// có thể truyền tham số 
-        }
-        public void runQuanLyTTForm(object obj)
-        {
-            Application.Run(new QL_TrucTiep());// có thể truyền tham số 
-        }
+       
         private bool check_login()
         {
             try
@@ -94,29 +83,28 @@ namespace ATBM_HTTT
                         QL_TrucTiep ql = new QL_TrucTiep();
                         ql.ShowDialog();
                         break;
-                    //case "TRUONGPHONG":
-                    //    this.Hide();
-                    //    //t = new Thread(run_TruongPhong_Form);
-                    //    t.SetApartmentState(ApartmentState.STA);
-                    //    t.Start();
-                    //    break;
-                    //case "TAICHINH":
-                    //    this.Hide();
-                    //    //t = new Thread(run_TaiChinh_Form);
-                    //    t.SetApartmentState(ApartmentState.STA);
-                    //    t.Start();
-                    //    break;
+                    case "TRUONGPHONG":
+                        this.Hide();
+                        TruongPhong TP = new TruongPhong();
+                        TP.ShowDialog();
+                        break;
+
+                    case "TAICHINH":
+                        this.Hide();
+                        TaiChinh TC = new TaiChinh();
+                        TC.ShowDialog();
+                        break;
+
                     case "NHANSU":
                         this.Hide();
                         NhanSu ns = new NhanSu();
                         ns.ShowDialog();
                         break;
-                        //case "TRUONGDA":
-                        //    this.Hide();
-                        //    //t = new Thread(run_TruongDeAn_Form);
-                        //    t.SetApartmentState(ApartmentState.STA);
-                        //    t.Start();
-                        //    break;
+                    case "TRUONGDA":
+                        this.Hide();
+                        TruongDeAn DA = new TruongDeAn();
+                        DA.ShowDialog();
+                        break;
                         //default:
                         //    MessageBox.Show(" Hệ thống hiện chưa hổ trợ UI cho giám đốc !");
                         //    break;

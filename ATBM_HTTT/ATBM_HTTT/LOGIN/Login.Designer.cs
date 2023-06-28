@@ -77,7 +77,7 @@ namespace ATBM_HTTT
             // button_login
             // 
             this.button_login.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_login.Location = new System.Drawing.Point(192, 219);
+            this.button_login.Location = new System.Drawing.Point(201, 220);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(109, 40);
             this.button_login.TabIndex = 4;
@@ -108,6 +108,7 @@ namespace ATBM_HTTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(507, 284);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtWarning);
@@ -117,8 +118,11 @@ namespace ATBM_HTTT
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaximumSize = new System.Drawing.Size(529, 340);
+            this.MinimumSize = new System.Drawing.Size(529, 340);
             this.Name = "Login";
             this.Text = "Login";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
