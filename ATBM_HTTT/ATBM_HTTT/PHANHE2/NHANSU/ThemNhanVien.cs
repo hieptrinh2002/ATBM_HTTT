@@ -43,12 +43,13 @@ namespace ATBM_HTTT
                     OracleCommand command = new OracleCommand(query, conn);
                     command.CommandType = CommandType.StoredProcedure;
 
-                    var maNV = new OracleParameter("@hoTen", "");
+                    var maNV = new OracleParameter("@maNV", "");
                     var hoTen = new OracleParameter("@hoTen", "");
                     var phai = new OracleParameter("@phai", "");
                     var ngaySinh = new OracleParameter("@ngaySinh", DateTime.Now);
                     var diaChi = new OracleParameter("@diaChi", "");
                     var sdt = new OracleParameter("@sdt", "");
+                    var vaiTro = new OracleParameter("@vaiTro", "");
                     var maNQL = new OracleParameter("@maNQL", "");
                     var PHG = new OracleParameter("@PHG", "");
 
@@ -58,6 +59,7 @@ namespace ATBM_HTTT
                     command.Parameters.Add(ngaySinh);
                     command.Parameters.Add(diaChi);
                     command.Parameters.Add(sdt);
+                    command.Parameters.Add(vaiTro);
                     command.Parameters.Add(maNQL);
                     command.Parameters.Add(PHG);
 
@@ -68,17 +70,18 @@ namespace ATBM_HTTT
                     ngaySinh.Value = (DateTime)dateTimePicker_NgSinh.Value;
                     diaChi.Value = textBox_diachi.Text.ToString();
                     sdt.Value = textBox_sdt.Text.ToString();
+                    vaiTro.Value = comboBox_role.Text.ToString();
                     maNQL.Value = textBox_MaQL.Text.ToString();
                     PHG.Value = textBox_PhongBan.Text.ToString();
 
                     command.ExecuteNonQuery();
 
-                    MessageBox.Show("đã lưu !");
+                    MessageBox.Show("Thêm thànH công !");
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("lỗi update thêm nhân viên :" + ex.Message.ToString());
+                    MessageBox.Show("lỗi thêm nhân viên :" + ex.Message.ToString());
 
                 }
                 finally

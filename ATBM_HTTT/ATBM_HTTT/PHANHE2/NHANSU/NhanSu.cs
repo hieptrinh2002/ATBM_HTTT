@@ -147,5 +147,17 @@ namespace ATBM_HTTT
             UpdatePhongBan pb = new UpdatePhongBan();
             pb.ShowDialog();
         }
+
+        private void button_TNV_QLNV_Click(object sender, EventArgs e)
+        {
+            ThemNhanVien tnv = new ThemNhanVien();
+            tnv.ShowDialog();
+        }
+
+        private void button_CNNV_QLNV_Click(object sender, EventArgs e)
+        {
+            CapNhatNhanvien CN = new CapNhatNhanvien();
+            CN.ShowDialog();
+        }
     }
 }

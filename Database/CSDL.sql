@@ -304,8 +304,6 @@ VALUES ('NVHIEP', N'Trịnh Hữu Hiệp', N'Nam', to_date('01/01/2002', 'DD/MM/
 
 
 
-
-
 INSERT INTO PHONGBAN (MAPB, TENPB,TRPHG) VALUES ('PB0001',N'Phòng kế toán','NV041');
 
 INSERT INTO PHONGBAN (MAPB, TENPB,TRPHG) VALUES ('PB0002',N'Phòng kinh doanh','NV042');

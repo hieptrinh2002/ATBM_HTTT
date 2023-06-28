@@ -251,3 +251,5 @@ D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\
 D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.NhanSu.resources
 D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.ThemPhongBan.resources
 D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.UpdatePhongBan.resources
+D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.ThemNhanVien.resources
+D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.CapNhatNhanvien.resources

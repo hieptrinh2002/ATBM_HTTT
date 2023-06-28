@@ -102,17 +102,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection.cs" />
-    <Compile Include="NhanSu.cs">
+    <Compile Include="CapNhatNhanvien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NhanSu.Designer.cs">
+    <Compile Include="CapNhatNhanvien.Designer.cs">
+      <DependentUpon>CapNhatNhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs" />
+    <Compile Include="NHANSU\NhanSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NHANSU\NhanSu.Designer.cs">
       <DependentUpon>NhanSu.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVien.cs">
+    <Compile Include="NHANVIEN\NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NhanVien.Designer.cs">
+    <Compile Include="NHANVIEN\NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="PHANHE1\ROLE_USER_INFORMATION\DatabaseManager.cs">
@@ -184,10 +190,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QL_TrucTiep.cs">
+    <Compile Include="QL_TRUCTIEP\QL_TrucTiep.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QL_TrucTiep.Designer.cs">
+    <Compile Include="QL_TRUCTIEP\QL_TrucTiep.Designer.cs">
       <DependentUpon>QL_TrucTiep.cs</DependentUpon>
     </Compile>
     <Compile Include="ShowProfile.cs">
@@ -196,22 +202,31 @@
     <Compile Include="ShowProfile.Designer.cs">
       <DependentUpon>ShowProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemPhongBan.cs">
+    <Compile Include="NHANSU\ThemPhongBan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemPhongBan.Designer.cs">
+    <Compile Include="NHANSU\ThemPhongBan.Designer.cs">
       <DependentUpon>ThemPhongBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdatePhongBan.cs">
+    <Compile Include="NHANSU\UpdatePhongBan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdatePhongBan.Designer.cs">
+    <Compile Include="NHANSU\UpdatePhongBan.Designer.cs">
       <DependentUpon>UpdatePhongBan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="NhanSu.resx">
+    <Compile Include="ThemNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemNhanVien.Designer.cs">
+      <DependentUpon>ThemNhanVien.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CapNhatNhanvien.resx">
+      <DependentUpon>CapNhatNhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NHANSU\NhanSu.resx">
       <DependentUpon>NhanSu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhanVien.resx">
+    <EmbeddedResource Include="NHANVIEN\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PHANHE1\ROLE_USER_INFORMATION\DatabaseManager.resx">
@@ -257,17 +272,20 @@
     <EmbeddedResource Include="PHANHE1\ROLE_OPTIONS\USERS_ROLES.resx">
       <DependentUpon>USERS_ROLES.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QL_TrucTiep.resx">
+    <EmbeddedResource Include="QL_TRUCTIEP\QL_TrucTiep.resx">
       <DependentUpon>QL_TrucTiep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowProfile.resx">
       <DependentUpon>ShowProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemPhongBan.resx">
+    <EmbeddedResource Include="NHANSU\ThemPhongBan.resx">
       <DependentUpon>ThemPhongBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdatePhongBan.resx">
+    <EmbeddedResource Include="NHANSU\UpdatePhongBan.resx">
       <DependentUpon>UpdatePhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemNhanVien.resx">
+      <DependentUpon>ThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>

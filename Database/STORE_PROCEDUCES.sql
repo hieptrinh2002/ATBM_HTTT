@@ -148,3 +148,137 @@ BEGIN
     CLOSE CURS; 
      
 END;
+
+--Thêm phòng ban
+CREATE OR REPLACE PROCEDURE SP_NHANSU_THEM_PHONGBAN( p_mapb VARCHAR2,p_tenpb VARCHAR2, p_trphg VARCHAR2)
+IS
+     p_count1 NUMBER;
+      p_count2 number;
+BEGIN
+    SELECT COUNT(*) INTO p_count1 FROM PHONGBAN  WHERE TRPHG = p_trphg;    
+    SELECT COUNT(*) INTO p_count2 FROM PHONGBAN  WHERE MAPB = p_mapb;
+    IF(P_count1 < 1 AND p_trphg IS NOT NULL) then
+         raise_application_error(-20000, 'Mã trưởng phòng không tồn tại');
+    ELSIF (P_count2 > 0) THEN 
+         raise_application_error(-20000, 'Mã phòng đã tồn tại');
+    ELSE
+    INSERT INTO PHONGBAN (MAPB, TENPB, TRPHG) VALUES (p_mapb, p_tenpb, p_trphg);
+    END IF;
+END;
+/
+GRANT EXECUTE ON SP_NHANSU_THEM_PHONGBAN TO NHANSU;
+
+/
+-- nhân sự cập nhật phòng ban
+CREATE OR REPLACE PROCEDURE USP_NHANSU_CAPNHAT_PHONGBAN(
+    p_mapb IN VARCHAR2,
+    p_tenpb IN VARCHAR2,
+    p_trphg IN VARCHAR2
+)
+AS    
+      p_count1 NUMBER;
+      p_count2 NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO p_count1 FROM PHONGBAN  WHERE TRPHG = p_trphg;  
+    
+    IF(P_count1 < 1 AND p_trphg IS NOT NULL) then
+         raise_application_error(-20000, 'Mã trưởng phòng mới không tồn tại');
+    END IF;
+    
+    SELECT COUNT(*) INTO p_count2 FROM PHONGBAN  WHERE MAPB = p_mapb; -- 
+    
+    IF (P_count2 < 1) THEN  -- KIỂM TRA TỒN TẠI CỦA PHÒNG BAN
+         raise_application_error(-20000, 'Mã phòng cần cập nhật không tồn tại');
+    ELSE 
+       UPDATE PHONGBAN
+        SET TENPB = p_tenpb,
+            TRPHG = p_trphg
+        WHERE MAPB = p_mapb;
+    END IF;
+END;
+/
+GRANT EXECUTE ON USP_NHANSU_CAPNHAT_PHONGBAN TO NHANSU;
+/
+EXEC USP_NHANSU_CAPNHAT_PHONGBAN('PB00013',N'PHONG TEST_Y','NV041');
+/
+-- nhân sự thêm nhân viên 
+
+CREATE OR REPLACE PROCEDURE SP_NHANSU_THEMNHANVIEN(
+    p_MANV IN NVARCHAR2,
+    p_TENNV IN NVARCHAR2,
+    p_PHAI IN NVARCHAR2,
+    p_NGAYSINH IN DATE,
+    p_DIACHI IN NVARCHAR2,
+    p_SODT IN NVARCHAR2,
+    p_VAITRO IN NVARCHAR2,
+    p_MANQL IN NVARCHAR2,
+    p_PHG IN NVARCHAR2
+) 
+AS    
+      p_count1 NUMBER;
+      p_count2 NUMBER;
+      p_count3 NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO p_count1 FROM NHANVIEN  WHERE MANV = p_MANV;  
+    IF(P_count1 > 0 ) then
+         raise_application_error(-20000, 'Mã nhân viên đã tồn tại');
+    END IF;
+    
+    SELECT COUNT(*) INTO p_count2 FROM PHONGBAN  WHERE MAPB = p_PHG;  
+        
+    IF (p_PHG is not null and P_count2 < 1) THEN  -- KIỂM TRA TỒN TẠI CỦA PHÒNG BAN
+         raise_application_error(-20000, 'Mã phòng ban không tồn tại');
+    END IF;     
+    
+    SELECT COUNT(*) INTO p_count3 FROM NHANVIEN  WHERE MANV = p_MANQL;  
+    IF (p_MANQL is not null and P_count2 < 1) THEN  -- KIỂM TRA TỒN TẠI CỦA PHÒNG BAN
+         raise_application_error(-20000, 'Mã quản lý không tồn tại');
+    END IF;
+    
+    INSERT INTO  NHANVIEN(MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, VAITRO, MANQL, PHG)
+    VALUES (p_MANV, p_TENNV, p_PHAI, p_NGAYSINH, p_DIACHI, p_SODT, p_VAITRO, p_MANQL, p_PHG);
+    
+END;
+/
+GRANT EXECUTE ON SP_NHANSU_THEMNHANVIEN TO NHANSU;
+/
+-- nhân sự cập nhật nhân viên
+
+-- nhân sự thêm nhân viên 
+
+CREATE OR REPLACE PROCEDURE SP_NHANSU_CAPNHAT_NHANVIEN(
+    p_MANV IN NVARCHAR2,
+    p_TENNV IN NVARCHAR2,
+    p_PHAI IN NVARCHAR2,
+    p_NGAYSINH IN DATE,
+    p_DIACHI IN NVARCHAR2,
+    p_SODT IN NVARCHAR2,
+    p_VAITRO IN NVARCHAR2,
+    p_MANQL IN NVARCHAR2,
+    p_PHG IN NVARCHAR2
+) 
+AS    
+      p_count1 NUMBER;
+      p_count2 NUMBER;
+      p_count3 NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO p_count1 FROM NHANVIEN  WHERE MANV = p_MANV;  
+    IF(P_count1 > 0 ) then
+         raise_application_error(-20000, 'Mã nhân viên đã tồn tại');
+    END IF;
+    
+    SELECT COUNT(*) INTO p_count2 FROM PHONGBAN  WHERE MAPB = p_PHG;  
+        
+    IF (p_PHG is not null and P_count2 < 1) THEN  -- KIỂM TRA TỒN TẠI CỦA PHÒNG BAN
+         raise_application_error(-20000, 'Mã phòng ban không tồn tại');
+    END IF;     
+    
+    SELECT COUNT(*) INTO p_count3 FROM NHANVIEN  WHERE MANV = p_MANQL;  
+    IF (p_MANQL is not null and P_count2 < 1) THEN  -- KIỂM TRA TỒN TẠI CỦA PHÒNG BAN
+         raise_application_error(-20000, 'Mã quản lý không tồn tại');
+    END IF;
+    
+    INSERT INTO  NHANVIEN(MANV, TENNV, PHAI, NGAYSINH, DIACHI, SODT, VAITRO, MANQL, PHG)
+    VALUES (p_MANV, p_TENNV, p_PHAI, p_NGAYSINH, p_DIACHI, p_SODT, p_VAITRO, p_MANQL, p_PHG);
+    
+END;

@@ -260,6 +260,7 @@ namespace ATBM_HTTT
             this.button_CNNV_QLNV.TabIndex = 61;
             this.button_CNNV_QLNV.Text = "Cập Nhật Nhân Viên";
             this.button_CNNV_QLNV.UseVisualStyleBackColor = true;
+            this.button_CNNV_QLNV.Click += new System.EventHandler(this.button_CNNV_QLNV_Click);
             // 
             // label3
             // 
@@ -294,6 +295,7 @@ namespace ATBM_HTTT
             this.button_TNV_QLNV.TabIndex = 58;
             this.button_TNV_QLNV.Text = "Thêm Nhân Viên";
             this.button_TNV_QLNV.UseVisualStyleBackColor = true;
+            this.button_TNV_QLNV.Click += new System.EventHandler(this.button_TNV_QLNV_Click);
             // 
             // button_DSNV_QLNV
             // 
