@@ -176,5 +176,10 @@ namespace ATBM_HTTT
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+
+        private void Xoa_SuaDeAn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

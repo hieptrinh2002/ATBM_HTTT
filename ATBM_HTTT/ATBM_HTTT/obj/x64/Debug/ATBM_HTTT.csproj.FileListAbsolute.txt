@@ -259,7 +259,6 @@ D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\
 D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.TruongDeAn.resources
 D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.Xoa_SuaDeAn.resources
 D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.TaiChinh.resources
-D:\An toàn và bảo mật trong hệ thống thông tin\code_gitHub\ATBM_HTTT\ATBM_HTTT\ATBM_HTTT\obj\x64\Debug\ATBM_HTTT.TEST.resources
 C:\Users\PC\Source\Repos\ATBM_HTTT1\ATBM_HTTT\ATBM_HTTT\bin\x64\Debug\ATBM_HTTT.exe.config
 C:\Users\PC\Source\Repos\ATBM_HTTT1\ATBM_HTTT\ATBM_HTTT\bin\x64\Debug\ATBM_HTTT.exe
 C:\Users\PC\Source\Repos\ATBM_HTTT1\ATBM_HTTT\ATBM_HTTT\bin\x64\Debug\ATBM_HTTT.pdb

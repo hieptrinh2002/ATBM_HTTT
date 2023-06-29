@@ -16,7 +16,7 @@ Begin
 
     END IF;
 End;
-
+/
 -------update user (passwword)
 create or replace procedure proc_Change_UserPassword(User_name in varchar2,New_PassWord in varchar2)
 authid current_user
@@ -47,7 +47,7 @@ Begin
          RAISE_APPLICATION_ERROR(-20000,'User khong ton tai'); 
     END IF;
 End;
-
+/
 create or replace procedure Proc_DROP_User_CASCADE (User_name in varchar2)
 authid current_user 
 as
@@ -62,7 +62,7 @@ Begin
          RAISE_APPLICATION_ERROR(-20000,'User khong ton tai'); 
     END IF;
 End;
-exec Proc_DROP_User('NV333')
+/
 
 ------Tao role
 create or replace procedure Proc_Create_NewRole(Role_name in varchar2,Pass_Word in varchar2)
@@ -79,7 +79,7 @@ Begin
     execute IMMEDIATE (Tmp_query);
     execute immediate('ALTER SESSION SET "_ORACLE_SCRIPT" = FALSE');
 End;
-
+/
 ------Xoa role
 create or replace procedure Proc_Drop_Role(Role_name in varchar2)
 authid current_user 
@@ -108,7 +108,6 @@ begin
     end if;
 end;
 
-select * from all_users
 /-- TẠO LIST USER
 DECLARE
     CURSOR CURS IS (SELECT MANV,VAITRO FROM NHANVIEN WHERE MANV NOT IN (SELECT USERNAME FROM ALL_USERS));

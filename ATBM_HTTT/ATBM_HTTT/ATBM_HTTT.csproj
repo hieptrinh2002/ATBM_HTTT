@@ -102,23 +102,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NHANSU\CapNhatNhanvien.cs">
+    <Compile Include="PHANHE2\NHANSU\CapNhatNhanvien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NHANSU\CapNhatNhanvien.Designer.cs">
+    <Compile Include="PHANHE2\NHANSU\CapNhatNhanvien.Designer.cs">
       <DependentUpon>CapNhatNhanvien.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
-    <Compile Include="NHANSU\NhanSu.cs">
+    <Compile Include="PHANHE2\NHANSU\NhanSu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NHANSU\NhanSu.Designer.cs">
+    <Compile Include="PHANHE2\NHANSU\NhanSu.Designer.cs">
       <DependentUpon>NhanSu.cs</DependentUpon>
     </Compile>
-    <Compile Include="NHANVIEN\NhanVien.cs">
+    <Compile Include="PHANHE2\NHANVIEN\NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NHANVIEN\NhanVien.Designer.cs">
+    <Compile Include="PHANHE2\NHANVIEN\NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="PHANHE1\ROLE_USER_INFORMATION\DatabaseManager.cs">
@@ -190,10 +190,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QL_TRUCTIEP\QL_TrucTiep.cs">
+    <Compile Include="PHANHE2\QL_TRUCTIEP\QL_TrucTiep.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QL_TRUCTIEP\QL_TrucTiep.Designer.cs">
+    <Compile Include="PHANHE2\QL_TRUCTIEP\QL_TrucTiep.Designer.cs">
       <DependentUpon>QL_TrucTiep.cs</DependentUpon>
     </Compile>
     <Compile Include="ShowProfile.cs">
@@ -202,67 +202,67 @@
     <Compile Include="ShowProfile.Designer.cs">
       <DependentUpon>ShowProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="NHANSU\ThemPhongBan.cs">
+    <Compile Include="PHANHE2\NHANSU\ThemPhongBan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NHANSU\ThemPhongBan.Designer.cs">
+    <Compile Include="PHANHE2\NHANSU\ThemPhongBan.Designer.cs">
       <DependentUpon>ThemPhongBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="NHANSU\UpdatePhongBan.cs">
+    <Compile Include="PHANHE2\NHANSU\UpdatePhongBan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NHANSU\UpdatePhongBan.Designer.cs">
+    <Compile Include="PHANHE2\NHANSU\UpdatePhongBan.Designer.cs">
       <DependentUpon>UpdatePhongBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="NHANSU\ThemNhanVien.cs">
+    <Compile Include="PHANHE2\NHANSU\ThemNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NHANSU\ThemNhanVien.Designer.cs">
+    <Compile Include="PHANHE2\NHANSU\ThemNhanVien.Designer.cs">
       <DependentUpon>ThemNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="TAICHINH\TaiChinh.cs">
+    <Compile Include="PHANHE2\TAICHINH\TaiChinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TAICHINH\TaiChinh.Designer.cs">
+    <Compile Include="PHANHE2\TAICHINH\TaiChinh.Designer.cs">
       <DependentUpon>TaiChinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="TRUONGDEAN\ThemDeAn.cs">
+    <Compile Include="PHANHE2\TRUONGDEAN\ThemDeAn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TRUONGDEAN\ThemDeAn.Designer.cs">
+    <Compile Include="PHANHE2\TRUONGDEAN\ThemDeAn.Designer.cs">
       <DependentUpon>ThemDeAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="TRUONGDEAN\TruongDeAn.cs">
+    <Compile Include="PHANHE2\TRUONGDEAN\TruongDeAn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TRUONGDEAN\TruongDeAn.Designer.cs">
+    <Compile Include="PHANHE2\TRUONGDEAN\TruongDeAn.Designer.cs">
       <DependentUpon>TruongDeAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="TRUONGPHONG\TruongPhong.cs">
+    <Compile Include="PHANHE2\TRUONGPHONG\TruongPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TRUONGPHONG\TruongPhong.Designer.cs">
+    <Compile Include="PHANHE2\TRUONGPHONG\TruongPhong.Designer.cs">
       <DependentUpon>TruongPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="TRUONGPHONG\XuLyPhanCong.cs">
+    <Compile Include="PHANHE2\TRUONGPHONG\XuLyPhanCong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TRUONGPHONG\XuLyPhanCong.Designer.cs">
+    <Compile Include="PHANHE2\TRUONGPHONG\XuLyPhanCong.Designer.cs">
       <DependentUpon>XuLyPhanCong.cs</DependentUpon>
     </Compile>
-    <Compile Include="TRUONGDEAN\Xoa_SuaDeAn.cs">
+    <Compile Include="PHANHE2\TRUONGDEAN\Xoa_SuaDeAn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TRUONGDEAN\Xoa_SuaDeAn.Designer.cs">
+    <Compile Include="PHANHE2\TRUONGDEAN\Xoa_SuaDeAn.Designer.cs">
       <DependentUpon>Xoa_SuaDeAn.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="NHANSU\CapNhatNhanvien.resx">
+    <EmbeddedResource Include="PHANHE2\NHANSU\CapNhatNhanvien.resx">
       <DependentUpon>CapNhatNhanvien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NHANSU\NhanSu.resx">
+    <EmbeddedResource Include="PHANHE2\NHANSU\NhanSu.resx">
       <DependentUpon>NhanSu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NHANVIEN\NhanVien.resx">
+    <EmbeddedResource Include="PHANHE2\NHANVIEN\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PHANHE1\ROLE_USER_INFORMATION\DatabaseManager.resx">
@@ -308,37 +308,37 @@
     <EmbeddedResource Include="PHANHE1\ROLE_OPTIONS\USERS_ROLES.resx">
       <DependentUpon>USERS_ROLES.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QL_TRUCTIEP\QL_TrucTiep.resx">
+    <EmbeddedResource Include="PHANHE2\QL_TRUCTIEP\QL_TrucTiep.resx">
       <DependentUpon>QL_TrucTiep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowProfile.resx">
       <DependentUpon>ShowProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NHANSU\ThemPhongBan.resx">
+    <EmbeddedResource Include="PHANHE2\NHANSU\ThemPhongBan.resx">
       <DependentUpon>ThemPhongBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NHANSU\UpdatePhongBan.resx">
+    <EmbeddedResource Include="PHANHE2\NHANSU\UpdatePhongBan.resx">
       <DependentUpon>UpdatePhongBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NHANSU\ThemNhanVien.resx">
+    <EmbeddedResource Include="PHANHE2\NHANSU\ThemNhanVien.resx">
       <DependentUpon>ThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TAICHINH\TaiChinh.resx">
+    <EmbeddedResource Include="PHANHE2\TAICHINH\TaiChinh.resx">
       <DependentUpon>TaiChinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TRUONGDEAN\ThemDeAn.resx">
+    <EmbeddedResource Include="PHANHE2\TRUONGDEAN\ThemDeAn.resx">
       <DependentUpon>ThemDeAn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TRUONGDEAN\TruongDeAn.resx">
+    <EmbeddedResource Include="PHANHE2\TRUONGDEAN\TruongDeAn.resx">
       <DependentUpon>TruongDeAn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TRUONGPHONG\TruongPhong.resx">
+    <EmbeddedResource Include="PHANHE2\TRUONGPHONG\TruongPhong.resx">
       <DependentUpon>TruongPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TRUONGPHONG\XuLyPhanCong.resx">
+    <EmbeddedResource Include="PHANHE2\TRUONGPHONG\XuLyPhanCong.resx">
       <DependentUpon>XuLyPhanCong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TRUONGDEAN\Xoa_SuaDeAn.resx">
+    <EmbeddedResource Include="PHANHE2\TRUONGDEAN\Xoa_SuaDeAn.resx">
       <DependentUpon>Xoa_SuaDeAn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
@@ -361,9 +361,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PHANHE2\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\profile.png" />
   </ItemGroup>
