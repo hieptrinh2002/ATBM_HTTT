@@ -119,7 +119,7 @@ namespace ATBM_HTTT
 
         private void btn_Xoa_Sua_Click(object sender, EventArgs e)
         {
-            Xoa_SuaDeAn screen = new Xoa_SuaDeAn();
+            TEST screen = new TEST();
             screen.Show();
         }
 

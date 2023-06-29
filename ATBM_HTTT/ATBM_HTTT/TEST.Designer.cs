@@ -1,6 +1,7 @@
-﻿namespace ATBM_HTTT
+﻿
+namespace ATBM_HTTT
 {
-    partial class Xoa_SuaDeAn
+    partial class TEST
     {
         /// <summary>
         /// Required designer variable.
@@ -28,67 +29,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtTenDA = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_XoaDA = new System.Windows.Forms.Button();
             this.btn_SuaDA = new System.Windows.Forms.Button();
             this.cmbMaDA = new System.Windows.Forms.ComboBox();
+            this.panel_DEAN = new System.Windows.Forms.Panel();
             this.txtPhongBan = new System.Windows.Forms.TextBox();
+            this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtTenDA = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel_DEAN.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dtpNgayBD
-            // 
-            this.dtpNgayBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayBD.Location = new System.Drawing.Point(199, 302);
-            this.dtpNgayBD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpNgayBD.Name = "dtpNgayBD";
-            this.dtpNgayBD.Size = new System.Drawing.Size(316, 31);
-            this.dtpNgayBD.TabIndex = 28;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(34, 400);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 25);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Phòng ban";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(34, 309);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 25);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Ngày bắt đầu";
-            // 
-            // txtTenDA
-            // 
-            this.txtTenDA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDA.Location = new System.Drawing.Point(199, 204);
-            this.txtTenDA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTenDA.Name = "txtTenDA";
-            this.txtTenDA.Size = new System.Drawing.Size(316, 31);
-            this.txtTenDA.TabIndex = 26;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(34, 212);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 25);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Tên đề án";
             // 
             // label2
             // 
@@ -144,54 +98,112 @@
             this.cmbMaDA.TabIndex = 32;
             this.cmbMaDA.SelectedIndexChanged += new System.EventHandler(this.cmbMaDA_SelectedIndexChanged);
             // 
+            // panel_DEAN
+            // 
+            this.panel_DEAN.Controls.Add(this.txtPhongBan);
+            this.panel_DEAN.Controls.Add(this.dtpNgayBD);
+            this.panel_DEAN.Controls.Add(this.label5);
+            this.panel_DEAN.Controls.Add(this.label4);
+            this.panel_DEAN.Controls.Add(this.txtTenDA);
+            this.panel_DEAN.Controls.Add(this.label3);
+            this.panel_DEAN.Location = new System.Drawing.Point(12, 208);
+            this.panel_DEAN.Name = "panel_DEAN";
+            this.panel_DEAN.Size = new System.Drawing.Size(589, 285);
+            this.panel_DEAN.TabIndex = 34;
+            // 
             // txtPhongBan
             // 
             this.txtPhongBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhongBan.Location = new System.Drawing.Point(199, 400);
+            this.txtPhongBan.Location = new System.Drawing.Point(219, 226);
             this.txtPhongBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPhongBan.Name = "txtPhongBan";
             this.txtPhongBan.Size = new System.Drawing.Size(316, 28);
-            this.txtPhongBan.TabIndex = 33;
+            this.txtPhongBan.TabIndex = 39;
+            // 
+            // dtpNgayBD
+            // 
+            this.dtpNgayBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayBD.Location = new System.Drawing.Point(219, 128);
+            this.dtpNgayBD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpNgayBD.Name = "dtpNgayBD";
+            this.dtpNgayBD.Size = new System.Drawing.Size(316, 31);
+            this.dtpNgayBD.TabIndex = 38;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(54, 226);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(116, 25);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Phòng ban";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(54, 135);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 25);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Ngày bắt đầu";
+            // 
+            // txtTenDA
+            // 
+            this.txtTenDA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenDA.Location = new System.Drawing.Point(219, 30);
+            this.txtTenDA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTenDA.Name = "txtTenDA";
+            this.txtTenDA.Size = new System.Drawing.Size(316, 31);
+            this.txtTenDA.TabIndex = 37;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(54, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 25);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Tên đề án";
             // 
             // Xoa_SuaDeAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 644);
-            this.Controls.Add(this.txtPhongBan);
+            this.Controls.Add(this.panel_DEAN);
             this.Controls.Add(this.cmbMaDA);
             this.Controls.Add(this.btn_SuaDA);
             this.Controls.Add(this.btn_XoaDA);
-            this.Controls.Add(this.dtpNgayBD);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtTenDA);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MaximumSize = new System.Drawing.Size(651, 700);
-            this.MinimumSize = new System.Drawing.Size(651, 700);
             this.Name = "Xoa_SuaDeAn";
             this.Text = "Xoa_SuaDeAn";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Xoa_SuaDeAn_Load);
+            this.panel_DEAN.ResumeLayout(false);
+            this.panel_DEAN.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DateTimePicker dtpNgayBD;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTenDA;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_XoaDA;
         private System.Windows.Forms.Button btn_SuaDA;
         private System.Windows.Forms.ComboBox cmbMaDA;
+        private System.Windows.Forms.Panel panel_DEAN;
         private System.Windows.Forms.TextBox txtPhongBan;
+        private System.Windows.Forms.DateTimePicker dtpNgayBD;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtTenDA;
+        private System.Windows.Forms.Label label3;
+
     }
 }

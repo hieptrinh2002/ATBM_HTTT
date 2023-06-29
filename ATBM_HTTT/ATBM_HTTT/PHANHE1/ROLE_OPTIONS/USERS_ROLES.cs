@@ -126,6 +126,16 @@ namespace ATBM_HTTT
             Form f = new UpdateRole();
             f.ShowDialog();
         }
+
+        private void buttonDX_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

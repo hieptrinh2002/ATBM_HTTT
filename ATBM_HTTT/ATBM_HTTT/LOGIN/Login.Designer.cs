@@ -73,6 +73,7 @@ namespace ATBM_HTTT
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.Size = new System.Drawing.Size(279, 31);
             this.textBox_password.TabIndex = 3;
+            this.textBox_password.UseSystemPasswordChar = true;
             // 
             // button_login
             // 
@@ -88,7 +89,7 @@ namespace ATBM_HTTT
             // txtWarning
             // 
             this.txtWarning.AutoSize = true;
-            this.txtWarning.Location = new System.Drawing.Point(92, 195);
+            this.txtWarning.Location = new System.Drawing.Point(56, 178);
             this.txtWarning.Name = "txtWarning";
             this.txtWarning.Size = new System.Drawing.Size(21, 20);
             this.txtWarning.TabIndex = 6;

@@ -43,7 +43,7 @@ namespace ATBM_HTTT
         {
             string maDA = txtMaDA.Text.Trim().ToString();
             string tenDA = txtTenDA.Text.Trim().ToString();
-            string ngayBD = dtpNgayBD.Text.Split(' ')[0].Replace('/', '-').ToString();
+            DateTime ngayBD = dtpNgayBD.Value;
             string phongBan = cmbPhongBan.Text.Trim().ToString();
 
             if (maDA == "")
@@ -67,7 +67,7 @@ namespace ATBM_HTTT
                 using (OracleConnection conn = Connection.GetDBConnection())
                 {
                     conn.Open();
-                    string query = "INSERT INTO QLTGDA.VIEW_HIENTHI_ALL_DEAN (MADA, TENDA, NGAYBD, PHONG) VALUES (:maDAParam, :tenDAParam, TO_DATE(:dateParam, 'MM-DD-YYYY'), :phongParam)";
+                    string query = "INSERT INTO QLTGDA.VIEW_HIENTHI_ALL_DEAN (MADA, TENDA, NGAYBD, PHONG) VALUES (:maDAParam, :tenDAParam, :dateParam, :phongParam)";
 
                     using (OracleCommand cmd = new OracleCommand(query, conn))
                     {
@@ -81,11 +81,11 @@ namespace ATBM_HTTT
                 }
 
                 MessageBox.Show("Thêm thông tin đề án thành công!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
+                this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.ToString());
+                MessageBox.Show("đề án đã tồn tại: " + ex.ToString());
                 return;
             }
         }
