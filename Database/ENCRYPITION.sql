@@ -1,41 +1,48 @@
 
 --sử dụng thuật toán mã hóa DES_CBC_PKCS5 và một khóa mã hóa cố định
 -- sử dụng các hàm mã hóa và giải mã có sẵn trong Oracle như DBMS_CRYPTO.ENCRYPT và DBMS_CRYPTO.DECRYPT
-CREATE OR REPLACE FUNCTION ENCRYPT_NV(
-    p_input IN NVARCHAR2
-) RETURN RAW DETERMINISTIC IS
-    l_key RAW(128) := UTL_RAW.CAST_TO_RAW('nnt');
-BEGIN
-    RETURN DBMS_CRYPTO.ENCRYPT(
-        src => UTL_RAW.CAST_TO_RAW(p_input),
-        typ => DBMS_CRYPTO.DES_CBC_PKCS5,
-        key => l_key
-    );
-END;
-/
-/
 
-CREATE OR REPLACE FUNCTION DECRYPT_NV(
-    p_input IN RAW
-) RETURN NVARCHAR2 DETERMINISTIC IS
-    l_key RAW(128) := UTL_RAW.CAST_TO_RAW('nnt');
+-- Hàm mã hóa
+CREATE OR REPLACE FUNCTION EncryptNV(p_luong IN VARCHAR2, p_key IN VARCHAR2)
+  RETURN RAW
+IS
+  l_encrypted RAW(2000);
 BEGIN
-    RETURN UTL_RAW.CAST_TO_NVARCHAR2(
-        DBMS_CRYPTO.DECRYPT(
-            src => p_input,
-            typ => DBMS_CRYPTO.DES_CBC_PKCS5,
-            key => l_key
-        )
-    );
+  l_encrypted := DBMS_CRYPTO.ENCRYPT(
+    src => UTL_I18N.STRING_TO_RAW(p_luong, 'AL32UTF8'),
+    typ => DBMS_CRYPTO.DES_CBC_PKCS5,
+    key => UTL_I18N.STRING_TO_RAW(p_key, 'AL32UTF8')
+  );
+
+  RETURN l_encrypted;
 END;
 /
 
+-- Hàm giải mã
+CREATE OR REPLACE FUNCTION DecryptNV(p_encrypted IN RAW, p_key IN VARCHAR2)
+  RETURN VARCHAR2
+IS
+  l_decrypted VARCHAR2(100);
+BEGIN
+  l_decrypted := UTL_I18N.RAW_TO_CHAR(
+    DBMS_CRYPTO.DECRYPT(
+      src => p_encrypted,
+      typ => DBMS_CRYPTO.DES_CBC_PKCS5,
+      key => UTL_I18N.STRING_TO_RAW(p_key, 'AL32UTF8')
+    ),
+    'AL32UTF8'
+  );
+
+  RETURN l_decrypted;
+END;
+/
+
+
+-- Mã hóa dữ liệu trong cột LUONG
+UPDATE NHANVIEN
+SET LUONG = RAWTOHEX(EncryptNV(LUONG, 'YourEncryptionKey'));
+
 
 UPDATE NHANVIEN
-SET LUONG = ENCRYPT_NV(LUONG);
+SET PHUCAP = RAWTOHEX(EncryptNV(PHUCAP, 'YourEncryptionKey'));
 
-/
-UPDATE NHANVIEN
-SET PHUCAP = DECRYPT_NV(PHUCAP);
-
-/
