@@ -84,6 +84,8 @@ namespace ATBM_HTTT
                 oc.Parameters.Add(new OracleParameter("@new_Pwd", OracleDbType.Varchar2)).Value = new_pwd;
                 oc.Parameters["@Role_name"].Direction = ParameterDirection.Input;
                 oc.Parameters["@new_Pwd"].Direction = ParameterDirection.Input;
+
+
                 oc.ExecuteNonQuery();
                 status = true;
             }
