@@ -163,7 +163,6 @@
             this.Name = "TruongDeAn";
             this.Text = "TruongDeAn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.TruongDeAn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Oracle.DataAccess.Client;
 
 namespace ATBM_HTTT
@@ -119,13 +120,8 @@ namespace ATBM_HTTT
 
         private void btn_Xoa_Sua_Click(object sender, EventArgs e)
         {
-            TEST screen = new TEST();
+            Xoa_SuaDeAn screen = new Xoa_SuaDeAn();
             screen.Show();
-        }
-
-        private void TruongDeAn_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

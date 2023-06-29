@@ -226,12 +226,6 @@
     <Compile Include="TAICHINH\TaiChinh.Designer.cs">
       <DependentUpon>TaiChinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="TEST.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TEST.Designer.cs">
-      <DependentUpon>TEST.cs</DependentUpon>
-    </Compile>
     <Compile Include="TRUONGDEAN\ThemDeAn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,10 +250,10 @@
     <Compile Include="TRUONGPHONG\XuLyPhanCong.Designer.cs">
       <DependentUpon>XuLyPhanCong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Xoa_SuaDeAn.cs">
+    <Compile Include="TRUONGDEAN\Xoa_SuaDeAn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Xoa_SuaDeAn.Designer.cs">
+    <Compile Include="TRUONGDEAN\Xoa_SuaDeAn.Designer.cs">
       <DependentUpon>Xoa_SuaDeAn.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="NHANSU\CapNhatNhanvien.resx">
@@ -332,9 +326,6 @@
     <EmbeddedResource Include="TAICHINH\TaiChinh.resx">
       <DependentUpon>TaiChinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TEST.resx">
-      <DependentUpon>TEST.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TRUONGDEAN\ThemDeAn.resx">
       <DependentUpon>ThemDeAn.cs</DependentUpon>
     </EmbeddedResource>
@@ -347,7 +338,7 @@
     <EmbeddedResource Include="TRUONGPHONG\XuLyPhanCong.resx">
       <DependentUpon>XuLyPhanCong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Xoa_SuaDeAn.resx">
+    <EmbeddedResource Include="TRUONGDEAN\Xoa_SuaDeAn.resx">
       <DependentUpon>Xoa_SuaDeAn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">

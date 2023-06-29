@@ -9,20 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 
-
 namespace ATBM_HTTT
 {
-    public partial class TEST : Form
+    public partial class Xoa_SuaDeAn : Form
     {
-        public TEST()
+        public Xoa_SuaDeAn()
         {
             InitializeComponent();
+            loadMaDA();
         }
 
-        private void TEST_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void loadMaDA()
         {
@@ -58,7 +54,7 @@ namespace ATBM_HTTT
                 {
                     conn.Open();
 
-                    string query = "SELECT TENDA, NGAYBD, PHONG FROM QLTGDA.VIEW_HIENTHI_ALL_DEAN WHERE MADA = @mada";
+                    string query = "SELECT TENDA, NGAYBD, PHONG FROM QLTGDA.VIEW_HIENTHI_ALL_DEAN WHERE MADA = :mada";
 
                     using (OracleCommand command = new OracleCommand(query, conn))
                     {
@@ -95,7 +91,6 @@ namespace ATBM_HTTT
 
         private void btn_XoaDA_Click(object sender, EventArgs e)
         {
-            panel_DEAN.Enabled = false;
             string selectedMaDA = cmbMaDA.SelectedValue.ToString();
 
             try
@@ -111,6 +106,7 @@ namespace ATBM_HTTT
                     {
                         command.Parameters.Add(new OracleParameter("mada", selectedMaDA));
                         int rowsAffected = command.ExecuteNonQuery();
+
 
                         if (rowsAffected > 0)
                         {
@@ -138,7 +134,6 @@ namespace ATBM_HTTT
 
         private void btn_SuaDA_Click(object sender, EventArgs e)
         {
-            panel_DEAN.Enabled = true;
             string selectedMaDA = cmbMaDA.SelectedValue.ToString();
             string updatedTENDA = txtTenDA.Text;
             string updatedPHONG = txtPhongBan.Text;
@@ -180,11 +175,6 @@ namespace ATBM_HTTT
 
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-        }
-
-        private void Xoa_SuaDeAn_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
