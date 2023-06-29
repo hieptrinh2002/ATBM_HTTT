@@ -31,19 +31,19 @@ namespace ATBM_HTTT
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.USERS = new System.Windows.Forms.TabPage();
+            this.buttonDX = new System.Windows.Forms.Button();
             this.button_CapNhatUser_tabUSER = new System.Windows.Forms.Button();
             this.button_xoaUser_tabUSER = new System.Windows.Forms.Button();
             this.button_TaoUSER_tabUSER = new System.Windows.Forms.Button();
             this.button_xemDS_tabUSERS = new System.Windows.Forms.Button();
             this.dataGridView_listUser = new System.Windows.Forms.DataGridView();
             this.ROLES = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView_listROLES = new System.Windows.Forms.DataGridView();
             this.button_CapNhatROLE_TabROLES = new System.Windows.Forms.Button();
             this.button_XoaRole_tabROLES = new System.Windows.Forms.Button();
             this.button_TaoROLE_tabROLES = new System.Windows.Forms.Button();
             this.button_XemDS_TabROLES = new System.Windows.Forms.Button();
-            this.buttonDX = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.USERS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listUser)).BeginInit();
@@ -81,6 +81,16 @@ namespace ATBM_HTTT
             this.USERS.TabIndex = 0;
             this.USERS.Text = "        USERS        ";
             this.USERS.UseVisualStyleBackColor = true;
+            // 
+            // buttonDX
+            // 
+            this.buttonDX.Location = new System.Drawing.Point(26, 527);
+            this.buttonDX.Name = "buttonDX";
+            this.buttonDX.Size = new System.Drawing.Size(213, 82);
+            this.buttonDX.TabIndex = 16;
+            this.buttonDX.Text = "Đăng Xuất";
+            this.buttonDX.UseVisualStyleBackColor = true;
+            this.buttonDX.Click += new System.EventHandler(this.buttonDX_Click);
             // 
             // button_CapNhatUser_tabUSER
             // 
@@ -151,6 +161,16 @@ namespace ATBM_HTTT
             this.ROLES.Text = "        ROLES        ";
             this.ROLES.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(26, 524);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(213, 82);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Đăng Xuất";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // dataGridView_listROLES
             // 
             this.dataGridView_listROLES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -201,26 +221,6 @@ namespace ATBM_HTTT
             this.button_XemDS_TabROLES.UseVisualStyleBackColor = true;
             this.button_XemDS_TabROLES.Click += new System.EventHandler(this.button_XemDS_TabROLES_Click);
             // 
-            // buttonDX
-            // 
-            this.buttonDX.Location = new System.Drawing.Point(26, 527);
-            this.buttonDX.Name = "buttonDX";
-            this.buttonDX.Size = new System.Drawing.Size(213, 82);
-            this.buttonDX.TabIndex = 16;
-            this.buttonDX.Text = "Đăng Xuất";
-            this.buttonDX.UseVisualStyleBackColor = true;
-            this.buttonDX.Click += new System.EventHandler(this.buttonDX_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(26, 524);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(213, 82);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Đăng Xuất";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // USERS_ROLES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -231,6 +231,7 @@ namespace ATBM_HTTT
             this.MinimumSize = new System.Drawing.Size(1398, 831);
             this.Name = "USERS_ROLES";
             this.Text = "USERS_ROLES";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.USERS_ROLES_Load);
             this.tabControl1.ResumeLayout(false);
             this.USERS.ResumeLayout(false);
