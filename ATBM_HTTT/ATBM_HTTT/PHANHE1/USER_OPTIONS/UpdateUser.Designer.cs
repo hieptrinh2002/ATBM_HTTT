@@ -52,7 +52,7 @@ namespace ATBM_HTTT
             this.panel1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(34, 19);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(607, 421);
+            this.panel1.Size = new System.Drawing.Size(607, 377);
             this.panel1.TabIndex = 1;
             // 
             // label_notice
@@ -67,9 +67,9 @@ namespace ATBM_HTTT
             // button_update_user
             // 
             this.button_update_user.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_update_user.Location = new System.Drawing.Point(259, 257);
+            this.button_update_user.Location = new System.Drawing.Point(191, 284);
             this.button_update_user.Name = "button_update_user";
-            this.button_update_user.Size = new System.Drawing.Size(160, 51);
+            this.button_update_user.Size = new System.Drawing.Size(250, 51);
             this.button_update_user.TabIndex = 6;
             this.button_update_user.Text = "Update";
             this.button_update_user.UseVisualStyleBackColor = true;
@@ -79,14 +79,14 @@ namespace ATBM_HTTT
             // 
             this.textBox_NewPassword.Location = new System.Drawing.Point(249, 171);
             this.textBox_NewPassword.Name = "textBox_NewPassword";
-            this.textBox_NewPassword.Size = new System.Drawing.Size(202, 36);
+            this.textBox_NewPassword.Size = new System.Drawing.Size(246, 36);
             this.textBox_NewPassword.TabIndex = 5;
             // 
             // textBox_Username_update
             // 
             this.textBox_Username_update.Location = new System.Drawing.Point(249, 106);
             this.textBox_Username_update.Name = "textBox_Username_update";
-            this.textBox_Username_update.Size = new System.Drawing.Size(202, 36);
+            this.textBox_Username_update.Size = new System.Drawing.Size(246, 36);
             this.textBox_Username_update.TabIndex = 4;
             // 
             // handleuser_pass
@@ -121,10 +121,13 @@ namespace ATBM_HTTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 452);
+            this.ClientSize = new System.Drawing.Size(667, 416);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(689, 472);
+            this.MinimumSize = new System.Drawing.Size(689, 472);
             this.Name = "UpdateUser";
             this.Text = "UpdateUser";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.UpdateUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

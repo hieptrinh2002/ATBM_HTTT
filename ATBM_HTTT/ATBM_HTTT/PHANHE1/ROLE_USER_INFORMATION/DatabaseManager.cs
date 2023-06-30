@@ -21,6 +21,7 @@ namespace ATBM_HTTT
         {
             InitializeComponent();
             //checkOracleConnection();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btn_Thoat_Click(object sender, EventArgs e)

@@ -72,28 +72,28 @@ namespace ATBM_HTTT
 
         public bool UpdateUser_newPwd(String username, String new_pwd)
         {
-            bool status = false;
-            // Tạo kết nối trực tiếp tới Oracle
+            bool status = false; 
             OracleConnection conn = Connection.GetDBConnection();
             conn.Open();
             try
             {
-                // Tạo một đối tượng Command
-                OracleCommand oc = new OracleCommand("proc_Change_UserPassword", conn);
-                oc.CommandType = CommandType.StoredProcedure;
-                // Thêm tham số @user_name kiểu Varchar2.
-                oc.Parameters.Add(new OracleParameter("@User_name", OracleDbType.Varchar2)).Value = username;
-                oc.Parameters.Add(new OracleParameter("@New_PassWord", OracleDbType.Varchar2)).Value = new_pwd;
+         
+                string query = @"QLTGDA.proc_Change_UserPassword";
 
-                // Đăng ký tham số @user_name là INPUT.
-                oc.Parameters["@User_name"].Direction = ParameterDirection.Input;
-                oc.Parameters["@New_PassWord"].Direction = ParameterDirection.Input;
+                OracleCommand command = new OracleCommand(query, conn);
+                command.CommandType = CommandType.StoredProcedure;
 
-                // Thực thi thủ tục.
+                var User_name = new OracleParameter("@User_name", "");
+                var New_PassWord = new OracleParameter("@New_PassWord", "");
+               
+                command.Parameters.Add(User_name);
+                command.Parameters.Add(New_PassWord);
 
-                oc.ExecuteNonQuery();
+                User_name.Value = textBox_Username_update.Text.ToString();
+                New_PassWord.Value = textBox_NewPassword.Text.ToString();
+               
+                command.ExecuteNonQuery();
                 status = true;
-                //conn.Close();
             }
 
             catch (Exception e)

@@ -23,15 +23,17 @@ authid current_user
 is
 Tmp_count int;
 Begin
-    select count(*) into Tmp_count from all_users where username = User_name;
-    If(Tmp_count != 0) then
-        execute immediate('alter user '|| User_name||' identified by '||New_PassWord);
-    ELSE 
+    execute immediate('alter user '|| User_name||' identified by '||New_PassWord);
+    
+    EXCEPTION 
+    WHEN OTHERS THEN
             RAISE_APPLICATION_ERROR(-20000,'User khong ton tai'); 
-    END IF;
 END;
 /
+EXEC proc_Change_UserPassword('TEST1','DDD')
+ALTER USER TEST1 IDENTIFIED BY DDD
 
+GRANT SYSDBA TO QLTGDA
 -- x�a USER
 create or replace procedure Proc_DROP_User(User_name in varchar2)
 authid current_user 

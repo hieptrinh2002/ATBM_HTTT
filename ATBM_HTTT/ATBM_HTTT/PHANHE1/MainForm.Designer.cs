@@ -37,9 +37,9 @@ namespace ATBM_HTTT
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(161, 304);
+            this.button2.Location = new System.Drawing.Point(208, 360);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(561, 192);
+            this.button2.Size = new System.Drawing.Size(561, 200);
             this.button2.TabIndex = 1;
             this.button2.Text = "GRANT/REVOKE PRIVILEGES TO USERS / ROLES\r\n\r\nCHECK PRIVILEGES\r\n";
             this.button2.UseVisualStyleBackColor = true;
@@ -48,9 +48,9 @@ namespace ATBM_HTTT
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(485, 39);
+            this.button3.Location = new System.Drawing.Point(554, 78);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(393, 204);
+            this.button3.Size = new System.Drawing.Size(423, 204);
             this.button3.TabIndex = 2;
             this.button3.Text = "ROLE / USER  INFORMATION\r\n\r\nCHECK ROLES OF USERS\r\n\r\nPRIVILEGES INFOMATION\r\n\r\nUPDA" +
     "TE PRIVILEGES\r\n";
@@ -60,9 +60,9 @@ namespace ATBM_HTTT
             // button_THH
             // 
             this.button_THH.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_THH.Location = new System.Drawing.Point(46, 39);
+            this.button_THH.Location = new System.Drawing.Point(50, 78);
             this.button_THH.Name = "button_THH";
-            this.button_THH.Size = new System.Drawing.Size(362, 204);
+            this.button_THH.Size = new System.Drawing.Size(422, 204);
             this.button_THH.TabIndex = 0;
             this.button_THH.Text = "CREATE USERS / ROLES\r\n\r\nDROP USERS / ROLES\r\n\r\nUPDATE USERS / ROLES\r\n\r\n";
             this.button_THH.UseVisualStyleBackColor = true;
@@ -72,12 +72,15 @@ namespace ATBM_HTTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 525);
+            this.ClientSize = new System.Drawing.Size(1056, 609);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button_THH);
+            this.MaximumSize = new System.Drawing.Size(1078, 665);
+            this.MinimumSize = new System.Drawing.Size(1078, 665);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 

@@ -91,7 +91,7 @@ namespace ATBM_HTTT
             this.Role_Tab.Location = new System.Drawing.Point(4, 37);
             this.Role_Tab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Role_Tab.Name = "Role_Tab";
-            this.Role_Tab.Size = new System.Drawing.Size(1599, 815);
+            this.Role_Tab.Size = new System.Drawing.Size(1323, 745);
             this.Role_Tab.TabIndex = 4;
             this.Role_Tab.Text = "Role";
             // 
@@ -104,11 +104,11 @@ namespace ATBM_HTTT
             this.groupBox10.Controls.Add(this.label19);
             this.groupBox10.Controls.Add(this.dgv_role);
             this.groupBox10.Controls.Add(this.dgv_role2);
-            this.groupBox10.Location = new System.Drawing.Point(20, 20);
+            this.groupBox10.Location = new System.Drawing.Point(5, 4);
             this.groupBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox10.Size = new System.Drawing.Size(1562, 750);
+            this.groupBox10.Size = new System.Drawing.Size(1315, 750);
             this.groupBox10.TabIndex = 1;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Roles";
@@ -116,10 +116,10 @@ namespace ATBM_HTTT
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(671, 354);
+            this.button10.Location = new System.Drawing.Point(1041, 353);
             this.button10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(127, 48);
+            this.button10.Size = new System.Drawing.Size(226, 48);
             this.button10.TabIndex = 6;
             this.button10.Text = "Xem quyền";
             this.button10.UseVisualStyleBackColor = true;
@@ -127,16 +127,16 @@ namespace ATBM_HTTT
             // 
             // rolename_textbox
             // 
-            this.rolename_textbox.Location = new System.Drawing.Point(332, 362);
+            this.rolename_textbox.Location = new System.Drawing.Point(363, 361);
             this.rolename_textbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rolename_textbox.Name = "rolename_textbox";
-            this.rolename_textbox.Size = new System.Drawing.Size(283, 36);
+            this.rolename_textbox.Size = new System.Drawing.Size(547, 36);
             this.rolename_textbox.TabIndex = 6;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(26, 366);
+            this.label18.Location = new System.Drawing.Point(57, 365);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(197, 28);
             this.label18.TabIndex = 6;
@@ -162,7 +162,7 @@ namespace ATBM_HTTT
             this.dgv_role.ReadOnly = true;
             this.dgv_role.RowHeadersWidth = 51;
             this.dgv_role.RowTemplate.Height = 25;
-            this.dgv_role.Size = new System.Drawing.Size(1077, 275);
+            this.dgv_role.Size = new System.Drawing.Size(1307, 275);
             this.dgv_role.TabIndex = 3;
             this.dgv_role.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_role_CellClick);
             // 
@@ -177,7 +177,7 @@ namespace ATBM_HTTT
             this.dgv_role2.ReadOnly = true;
             this.dgv_role2.RowHeadersWidth = 51;
             this.dgv_role2.RowTemplate.Height = 25;
-            this.dgv_role2.Size = new System.Drawing.Size(1082, 175);
+            this.dgv_role2.Size = new System.Drawing.Size(1312, 318);
             this.dgv_role2.TabIndex = 4;
             // 
             // System_Priviledges_Tab
@@ -188,7 +188,7 @@ namespace ATBM_HTTT
             this.System_Priviledges_Tab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.System_Priviledges_Tab.Name = "System_Priviledges_Tab";
             this.System_Priviledges_Tab.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.System_Priviledges_Tab.Size = new System.Drawing.Size(1599, 815);
+            this.System_Priviledges_Tab.Size = new System.Drawing.Size(1323, 745);
             this.System_Priviledges_Tab.TabIndex = 3;
             this.System_Priviledges_Tab.Text = "Privileges User/Role";
             this.System_Priviledges_Tab.UseVisualStyleBackColor = true;
@@ -199,13 +199,13 @@ namespace ATBM_HTTT
             this.dgv_check_pri.AllowUserToDeleteRows = false;
             this.dgv_check_pri.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_check_pri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_check_pri.Location = new System.Drawing.Point(34, 347);
+            this.dgv_check_pri.Location = new System.Drawing.Point(0, 324);
             this.dgv_check_pri.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgv_check_pri.Name = "dgv_check_pri";
             this.dgv_check_pri.ReadOnly = true;
             this.dgv_check_pri.RowHeadersWidth = 51;
             this.dgv_check_pri.RowTemplate.Height = 25;
-            this.dgv_check_pri.Size = new System.Drawing.Size(1032, 261);
+            this.dgv_check_pri.Size = new System.Drawing.Size(1317, 417);
             this.dgv_check_pri.TabIndex = 3;
             // 
             // groupBox3
@@ -225,11 +225,11 @@ namespace ATBM_HTTT
             this.groupBox3.Controls.Add(this.tb_name_pri);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(154, 8);
+            this.groupBox3.Location = new System.Drawing.Point(6, 8);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Size = new System.Drawing.Size(786, 308);
+            this.groupBox3.Size = new System.Drawing.Size(1311, 308);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cấp quyền cho User/Role";
@@ -237,10 +237,10 @@ namespace ATBM_HTTT
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(459, 221);
+            this.button2.Location = new System.Drawing.Point(921, 241);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(220, 65);
+            this.button2.Size = new System.Drawing.Size(242, 44);
             this.button2.TabIndex = 15;
             this.button2.Text = "Revoke";
             this.button2.UseVisualStyleBackColor = true;
@@ -251,7 +251,7 @@ namespace ATBM_HTTT
             this.tb_col.Location = new System.Drawing.Point(185, 161);
             this.tb_col.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_col.Name = "tb_col";
-            this.tb_col.Size = new System.Drawing.Size(265, 36);
+            this.tb_col.Size = new System.Drawing.Size(575, 36);
             this.tb_col.TabIndex = 14;
             // 
             // label5
@@ -266,10 +266,10 @@ namespace ATBM_HTTT
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(185, 221);
+            this.button1.Location = new System.Drawing.Point(274, 241);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 65);
+            this.button1.Size = new System.Drawing.Size(237, 44);
             this.button1.TabIndex = 9;
             this.button1.Text = "Grant";
             this.button1.UseVisualStyleBackColor = true;
@@ -278,7 +278,7 @@ namespace ATBM_HTTT
             // check_update
             // 
             this.check_update.AutoSize = true;
-            this.check_update.Location = new System.Drawing.Point(496, 111);
+            this.check_update.Location = new System.Drawing.Point(958, 110);
             this.check_update.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.check_update.Name = "check_update";
             this.check_update.Size = new System.Drawing.Size(112, 32);
@@ -289,7 +289,7 @@ namespace ATBM_HTTT
             // check_delete
             // 
             this.check_delete.AutoSize = true;
-            this.check_delete.Location = new System.Drawing.Point(631, 115);
+            this.check_delete.Location = new System.Drawing.Point(1093, 114);
             this.check_delete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.check_delete.Name = "check_delete";
             this.check_delete.Size = new System.Drawing.Size(105, 32);
@@ -300,7 +300,7 @@ namespace ATBM_HTTT
             // check_select
             // 
             this.check_select.AutoSize = true;
-            this.check_select.Location = new System.Drawing.Point(631, 61);
+            this.check_select.Location = new System.Drawing.Point(1093, 60);
             this.check_select.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.check_select.Name = "check_select";
             this.check_select.Size = new System.Drawing.Size(100, 32);
@@ -311,7 +311,7 @@ namespace ATBM_HTTT
             // check_with
             // 
             this.check_with.AutoSize = true;
-            this.check_with.Location = new System.Drawing.Point(496, 158);
+            this.check_with.Location = new System.Drawing.Point(958, 157);
             this.check_with.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.check_with.Name = "check_with";
             this.check_with.Size = new System.Drawing.Size(220, 32);
@@ -322,7 +322,7 @@ namespace ATBM_HTTT
             // check_insert
             // 
             this.check_insert.AutoSize = true;
-            this.check_insert.Location = new System.Drawing.Point(496, 61);
+            this.check_insert.Location = new System.Drawing.Point(958, 60);
             this.check_insert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.check_insert.Name = "check_insert";
             this.check_insert.Size = new System.Drawing.Size(99, 32);
@@ -335,15 +335,13 @@ namespace ATBM_HTTT
             this.cb_name_table.FormattingEnabled = true;
             this.cb_name_table.Items.AddRange(new object[] {
             "NHANVIEN",
-            "LUONG",
-            "TONGHOP",
             "DEAN",
             "PHANCONG",
-            "PHONGBAN",});
+            "PHONGBAN"});
             this.cb_name_table.Location = new System.Drawing.Point(185, 110);
             this.cb_name_table.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb_name_table.Name = "cb_name_table";
-            this.cb_name_table.Size = new System.Drawing.Size(265, 36);
+            this.cb_name_table.Size = new System.Drawing.Size(575, 36);
             this.cb_name_table.TabIndex = 3;
             // 
             // label4
@@ -360,7 +358,7 @@ namespace ATBM_HTTT
             this.tb_name_pri.Location = new System.Drawing.Point(185, 60);
             this.tb_name_pri.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_name_pri.Name = "tb_name_pri";
-            this.tb_name_pri.Size = new System.Drawing.Size(265, 36);
+            this.tb_name_pri.Size = new System.Drawing.Size(575, 36);
             this.tb_name_pri.TabIndex = 1;
             // 
             // label3
@@ -381,7 +379,7 @@ namespace ATBM_HTTT
             this.Privileges_Tab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Privileges_Tab.Name = "Privileges_Tab";
             this.Privileges_Tab.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Privileges_Tab.Size = new System.Drawing.Size(1599, 815);
+            this.Privileges_Tab.Size = new System.Drawing.Size(1323, 745);
             this.Privileges_Tab.TabIndex = 1;
             this.Privileges_Tab.Text = "Privileges";
             // 
@@ -395,9 +393,9 @@ namespace ATBM_HTTT
             this.groupBox2.Controls.Add(this.tb_user_sp);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Location = new System.Drawing.Point(596, 30);
+            this.groupBox2.Location = new System.Drawing.Point(623, 30);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(545, 289);
+            this.groupBox2.Size = new System.Drawing.Size(633, 289);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cấp quyền hệ thống";
@@ -405,7 +403,7 @@ namespace ATBM_HTTT
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(301, 210);
+            this.button8.Location = new System.Drawing.Point(387, 214);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(173, 55);
@@ -417,7 +415,7 @@ namespace ATBM_HTTT
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(64, 210);
+            this.button7.Location = new System.Drawing.Point(112, 214);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(173, 55);
@@ -430,7 +428,7 @@ namespace ATBM_HTTT
             // 
             this.check_with_ad.AutoSize = true;
             this.check_with_ad.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_with_ad.Location = new System.Drawing.Point(255, 154);
+            this.check_with_ad.Location = new System.Drawing.Point(303, 158);
             this.check_with_ad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.check_with_ad.Name = "check_with_ad";
             this.check_with_ad.Size = new System.Drawing.Size(230, 32);
@@ -589,7 +587,7 @@ namespace ATBM_HTTT
             "RECOVERY_CATALOG_OWNER",
             "HS_ADMIN_ROLE",
             "SCHEDULER_ADMIN"});
-            this.cb_user_sp.Location = new System.Drawing.Point(255, 101);
+            this.cb_user_sp.Location = new System.Drawing.Point(303, 105);
             this.cb_user_sp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb_user_sp.Name = "cb_user_sp";
             this.cb_user_sp.Size = new System.Drawing.Size(236, 36);
@@ -598,7 +596,7 @@ namespace ATBM_HTTT
             // tb_user_sp
             // 
             this.tb_user_sp.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_user_sp.Location = new System.Drawing.Point(255, 51);
+            this.tb_user_sp.Location = new System.Drawing.Point(303, 55);
             this.tb_user_sp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_user_sp.Name = "tb_user_sp";
             this.tb_user_sp.Size = new System.Drawing.Size(236, 36);
@@ -608,7 +606,7 @@ namespace ATBM_HTTT
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(18, 104);
+            this.label17.Location = new System.Drawing.Point(66, 108);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(184, 28);
             this.label17.TabIndex = 15;
@@ -618,7 +616,7 @@ namespace ATBM_HTTT
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(31, 52);
+            this.label16.Location = new System.Drawing.Point(79, 56);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(166, 28);
             this.label16.TabIndex = 14;
@@ -638,7 +636,7 @@ namespace ATBM_HTTT
             this.groupBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox8.Size = new System.Drawing.Size(525, 289);
+            this.groupBox8.Size = new System.Drawing.Size(583, 289);
             this.groupBox8.TabIndex = 13;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Cấp Role cho User";
@@ -707,11 +705,11 @@ namespace ATBM_HTTT
             this.tabControl1.Controls.Add(this.System_Priviledges_Tab);
             this.tabControl1.Controls.Add(this.Role_Tab);
             this.tabControl1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(16, 4);
+            this.tabControl1.Location = new System.Drawing.Point(3, 2);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1607, 856);
+            this.tabControl1.Size = new System.Drawing.Size(1331, 786);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
@@ -719,11 +717,14 @@ namespace ATBM_HTTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1173, 662);
+            this.ClientSize = new System.Drawing.Size(1337, 794);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximumSize = new System.Drawing.Size(1359, 850);
+            this.MinimumSize = new System.Drawing.Size(1359, 850);
             this.Name = "Privileges";
             this.Text = "Privileges";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Privileges_Load);
             this.Role_Tab.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);

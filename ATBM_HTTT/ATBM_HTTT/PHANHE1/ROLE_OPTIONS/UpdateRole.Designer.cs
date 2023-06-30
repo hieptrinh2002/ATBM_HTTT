@@ -54,8 +54,9 @@ namespace ATBM_HTTT
             this.panel1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(35, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(661, 368);
+            this.panel1.Size = new System.Drawing.Size(653, 368);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label2
             // 
@@ -79,9 +80,9 @@ namespace ATBM_HTTT
             // button_update_role
             // 
             this.button_update_role.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_update_role.Location = new System.Drawing.Point(243, 257);
+            this.button_update_role.Location = new System.Drawing.Point(197, 283);
             this.button_update_role.Name = "button_update_role";
-            this.button_update_role.Size = new System.Drawing.Size(148, 51);
+            this.button_update_role.Size = new System.Drawing.Size(270, 51);
             this.button_update_role.TabIndex = 6;
             this.button_update_role.Text = "Update";
             this.button_update_role.UseVisualStyleBackColor = true;
@@ -134,10 +135,13 @@ namespace ATBM_HTTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 412);
+            this.ClientSize = new System.Drawing.Size(700, 382);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(722, 438);
+            this.MinimumSize = new System.Drawing.Size(722, 438);
             this.Name = "UpdateRole";
             this.Text = "UpdateRole";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.UpdateRole_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
