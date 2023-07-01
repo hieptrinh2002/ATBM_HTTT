@@ -37,12 +37,26 @@ BEGIN
 END;
 /
 
-
 -- Mã hóa dữ liệu trong cột LUONG
 UPDATE NHANVIEN
 SET LUONG = RAWTOHEX(EncryptNV(LUONG, 'YourEncryptionKey'));
 
-
+/
 UPDATE NHANVIEN
 SET PHUCAP = RAWTOHEX(EncryptNV(PHUCAP, 'YourEncryptionKey'));
+/
+CREATE OR REPLACE FUNCTION DecryptLuong(p_encrypted_value IN RAW, p_key IN VARCHAR2)
+  RETURN VARCHAR2
+AS
+  l_decrypted_raw RAW(2000);
+  l_decrypted_value VARCHAR2(100);
+BEGIN
+  l_decrypted_raw := DBMS_CRYPTO.DECRYPT(p_encrypted_value, DBMS_CRYPTO.DES_CBC_PKCS5, UTL_I18N.STRING_TO_RAW(p_key));
+
+  l_decrypted_value := UTL_I18N.RAW_TO_CHAR(l_decrypted_raw);
+
+  RETURN l_decrypted_value;
+END;
+/
+
 

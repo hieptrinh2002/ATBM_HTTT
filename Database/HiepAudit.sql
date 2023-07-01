@@ -3,10 +3,6 @@ alter system set audit_trail = DB,EXTENDED scope = spfile;
 shutdown immediate;
 startup;
 
-
-
-
-
 --FINE-GRAINED AUDITING
 --Hãy cho biết cụ thể cách thức ghi vết (audit) các hành vi sau:
 --a. Những người đã cập nhật trường THOIGIAN trong quan hệ PHANCONG.
@@ -77,7 +73,7 @@ SELECT DB_USER,OBJECT_SCHEMA,POLICY_NAME,SQL_TEXT,STATEMENT_TYPE FROM DBA_FGA_AU
 /
 
 
-UPDATE QLTGDA.NHANVIEN SET LUONG = '1000400' WHERE MANV ='NV001' AND 
+UPDATE QLTGDA.NHANVIEN SET LUONG = '1000400' WHERE MANV ='NV001' 
 
 
 
