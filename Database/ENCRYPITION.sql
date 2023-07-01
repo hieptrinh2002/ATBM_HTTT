@@ -2,6 +2,8 @@
 --sử dụng thuật toán mã hóa DES_CBC_PKCS5 và một khóa mã hóa cố định
 -- sử dụng các hàm mã hóa và giải mã có sẵn trong Oracle như DBMS_CRYPTO.ENCRYPT và DBMS_CRYPTO.DECRYPT
 
+
+---------
 -- Hàm mã hóa
 CREATE OR REPLACE FUNCTION EncryptNV(p_luong IN VARCHAR2, p_key IN VARCHAR2)
   RETURN RAW
@@ -44,6 +46,7 @@ SET LUONG = RAWTOHEX(EncryptNV(LUONG, 'YourEncryptionKey'));
 /
 UPDATE NHANVIEN
 SET PHUCAP = RAWTOHEX(EncryptNV(PHUCAP, 'YourEncryptionKey'));
+<<<<<<< HEAD
 /
 CREATE OR REPLACE FUNCTION DecryptLuong(p_encrypted_value IN RAW, p_key IN VARCHAR2)
   RETURN VARCHAR2
@@ -58,5 +61,19 @@ BEGIN
   RETURN l_decrypted_value;
 END;
 /
+=======
+-------
+
+SELECT * FROM NHANVIEN;
+
+-- Giải mã:
+UPDATE NHANVIEN
+SET LUONG = TO_CHAR(DecryptNV(HEXTORAW(LUONG), 'YourEncryptionKey'));
+
+
+UPDATE NHANVIEN
+SET PHUCAP = TO_CHAR(DecryptNV(HEXTORAW(PHUCAP), 'YourEncryptionKey'));
+
+>>>>>>> a5da18404a2a3f56d61cb347392bb97c20509507
 
 
